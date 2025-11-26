@@ -1,0 +1,2321 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes sobre tarjetas de expansión, tipos y características.">
+      
+      
+        <meta name="author" content="Sergio Rey Martínez">
+      
+      
+        <link rel="canonical" href="https://sergio-apuntes.github.io/si/hardware/UD_03_5_Tarjetas_de_Expansion/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>UD 03.5 - Tarjetas de expansión GPY - Apuntes Sistemas Informáticos - DAM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud-035-apuntes-tarjetas-de-expansion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Apuntes Sistemas Informáticos - DAM" class="md-header__button md-logo" aria-label="Apuntes Sistemas Informáticos - DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes Sistemas Informáticos - DAM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD 03.5 - Tarjetas de expansión GPY
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Apuntes Sistemas Informáticos - DAM" class="md-nav__button md-logo" aria-label="Apuntes Sistemas Informáticos - DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Apuntes Sistemas Informáticos - DAM
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Presentación
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Presentación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a los Sistemas Operativos de Servidor
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a los Sistemas Operativos de Servidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_1_introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_2_arquitectura_cliente_servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitectura cliente/servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_3_funciones_SO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funciones de Sistemas Operativos en Red
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_4_sistemas_operativos_servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Principales sistemas operativos servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_5_recordatorio_red/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repaso conceptos de red
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Instalación de sistemas operativos de servidor privativos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Instalación de sistemas operativos de servidor privativos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_1_instalacion_SO_introduccion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_2_instalacion_windows_server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación de Windows Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_3_config_basica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_4_documentar_instalacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_5_administrar_discos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Administrar discos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_6_dominio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Administración de usuarios y grupos en Windows Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Administración de usuarios y grupos en Windows Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_01_objetos_dominios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objetos del Dominio en Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_02_usuarios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cuentas de Usuario en un Dominio Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_03_grupos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grupos en Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_04_equipos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Equipos en Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_05_unidades_organizativas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidades Organizativas en Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_06_herramientas_administracion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas de administración en Windows Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_07_perfiles_usuarios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perfiles de usuario en Active Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gestión de recursos compartidos en Windows Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Gestión de recursos compartidos en Windows Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_01_permisos_derechos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Permisos y derechos en sistemas Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_02_servidor_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    El servidor de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_03_compartir_impresoras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compartir impresoras en red
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Directivas de grupo en Windows Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Directivas de grupo en Windows Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_01_introduccion_directivas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a las directivas de grupo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_02_creacion_directivas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creación y ámbito de aplicación de GPO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_03_herencia_directivas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herencia de directivas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_04_configuacion_directivas_comunes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración de directivas comunes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_05_verificacion_problemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verificación y resolución de problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud-035-apuntes-tarjetas-de-expansion">UD 03.5 - Apuntes - Tarjetas de expansión</h1>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#">Imprimir el Libro Completo</a></p>
+<h1 id="ud-035-apuntes-tarjetas-de-expansion_1">UD 03.5 - Apuntes - Tarjetas de expansión</h1>
+<table>
+<thead>
+<tr>
+<th>Sitio:</th>
+<th>AULES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curso:</td>
+<td>Sistemes informàtics-1CFSN</td>
+</tr>
+<tr>
+<td>Libro:</td>
+<td>UD 03.5 - Apuntes - Tarjetas de expansión</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Imprimido por:</th>
+<th>SERGIO REY MARTINEZ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Día:</td>
+<td>miércoles, 22 de octubre de 2025, 16:50</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tabla-de-contenidos">Tabla de contenidos</h2>
+<ul>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56358">1. Introducción</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56348">2. Slot de expansión</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56349">3. Tarjetas gráficas</a></p>
+<ul>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56344">3.1. Componentes</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56361">3.2. GPU y Arquitectura</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56351">3.3. Interfaces con placa base</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56345">3.4. Salidas/conectores de la tarjeta gráfica</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56347">3.5. Tarjetas gráficas integradas y dedicadas</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56363">3.6. SLI/Crossfire</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56362">3.7. Refrigeracíon</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56346">3.8. Alimentación</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56352">3.9. Multimonitor</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56343">4. Tarjetas de red</a></p>
+<ul>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56354">4.1. Tarjeta para redes cableadas</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56355">4.2. Tarjeta para redes Wifi</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56342">5. Tarjeta de sonido</a></p>
+<ul>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56359">5.1. Canales y polifonia</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56360">5.2. Operaciones básicas</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56353">5.3. Componentes</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56350">5.4. Salidas</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56356">6. Tarjetas de interfaz</a></p>
+</li>
+<li>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/tool/print/index.php?id=9389203#ch56357">7. Tarjetas capturadoras de vídeo</a></p>
+</li>
+</ul>
+<h2 id="1-introduccion">1. Introducción</h2>
+<p>Las tarjetas de expansión se insertan en las ranuras de expansión y permiten&nbsp; mejorar y añadir nuevas funciones al equipo. Su misión es comunicar dispositivos periféricos internos como externos con el sistema de bus del ordenador.</p>
+<p>Principalmente son</p>
+<p><strong>VESA, PCI</strong></p>
+<p>,</p>
+<p><strong>AGP</strong></p>
+<p>(todas estas prácticamente obsoletas) y</p>
+<p><strong>PCI Express</strong></p>
+<p>, y se instalan en el</p>
+<p><strong>slot</strong></p>
+<p>correspondiente.</p>
+<p>Una vez insertadas en el ordenador, será necesaria su configuración en el sistema operativo mediante controladores o</p>
+<p><em>drivers</em></p>
+<p>y la instalación del software del fabricante. También existen tarjetas</p>
+<p><em>plug-and-pla</em></p>
+<p>y, que se configuran automáticamente con ayuda del sistema operativo.</p>
+<p>Tarjetas de expansión más comunes:</p>
+<ul>
+<li>
+<p>Tarjeta gráfica.</p>
+</li>
+<li>
+<p>Tarjeta de red: LAN o Wi-Fi.</p>
+</li>
+<li>
+<p>Tarjetas multimedia: sonido, captura de vídeo, captura de televisión, etc.</p>
+</li>
+</ul>
+<p>Además, es posible ampliar nuestro equipo con otras tarjetas como:</p>
+<ul>
+<li>
+<p>Tarjetas de módem.</p>
+</li>
+<li>
+<p>Tarjetas de puertos USB.</p>
+</li>
+<li>
+<p>Tarjetas de puertos en serie o paralelo.</p>
+</li>
+<li>
+<p>Tarjetas controladoras de discos.</p>
+</li>
+<li>
+<p>Otras tarjetas adaptadoras; firewire, entradas/salidas, especificas de dispositivos, etc...</p>
+</li>
+</ul>
+<p>Debido al avance en la tecnología</p>
+<p><em>USB</em></p>
+<p>y a la</p>
+<p><em>integración de audio/vídeo en la placa base</em></p>
+<p>, hoy en día las tarjetas de expansión se emplean cada vez con menos frecuencia, integrándose en estos dispositivos todas las funcionalidades de las tarjetas de expansión convencionales.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Ejemplos de tarjetas:</p>
+<h2 id="2-slot-de-expansion">2. Slot de expansión</h2>
+<p>Los Slots son unas ranuras de expansión de la placa base donde se insertan las tarjetas.</p>
+<p>Incorporan cirucitos integrados para operar con diferentes periféricos o ampliar funcionalidades de un equpo</p>
+<p>Los Slots pincipales son:</p>
+<h3 id="pci-peripheral-components-interconnect">PCI (PERIPHERAL COMPONENTS INTERCONNECT)</h3>
+<ul>
+<li>
+<p>Ancho de bus de 32 bits o 64 bits (33 MHz)</p>
+</li>
+<li>
+<p>Tasa de transferencia máxima de 133 MB por segundo en el bus de 32 bits (33,33 MHz × 32 bits ÷ 8 bits / byte = 133 MB / s)</p>
+</li>
+<li>
+<p>Tasa de transferencia máxima de 266 MB / s en el bus de 64 bits</p>
+</li>
+<li>
+<p>3,3 V o 5 V, dependiendo del dispositivo</p>
+</li>
+</ul>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen (2).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen (2).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="agp-accelerated-graphics-port">AGP (ACCELERATED GRAPHICS PORT)</h3>
+<p>Uso exclusivo tarjetas gráficas. En desuso.</p>
+<ul>
+<li><strong>Versión 4x</strong></li>
+</ul>
+<p>, tasa de transferencia máxima de 1 GB / s (266 MHz × 32 bits ÷ 8 bits / byte = 1.064 MB / s)</p>
+<ul>
+<li><strong>Versión 8x</strong></li>
+</ul>
+<p>, tasa de transferencia máxima de 1 GB / s (533 MHz × 32 bits ÷ 8 bits / byte = 2.132 MB / s</p>
+<ul>
+<li>Tensiones:</li>
+</ul>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen (3).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen (3).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="pci-express-pci-e">PCI EXPRESS (PCI-E)</h3>
+<p>PCI Express (Peripheral Component Interconnect Express) es un bus seriado de datos de alta velocidad. Cuya función es la de comunicar entre sí los diferentes componentes de hardware de un PC. Estos componentes pueden tener todos sus controladores en la placa base. O bien pueden usar controladores externos, en el caso de tratarse de tarjetas de expansión.</p>
+<p>Este bus comenzó a introducirse en el año 2003. Y se desarrolló como sustituto del, ya extinto, bus PCI que empleaban las placas base hasta ese momento.</p>
+<h5 id="versiones-del-bus-pcie-desde-su-creacion">Versiones del bus PCIe desde su creación</h5>
+<p>Actualmente, se han desarrollado 6 versiones diferentes del bus PCIe:</p>
+<ul>
+<li><strong>PCIe 1.0</strong></li>
+</ul>
+<p>: presentado en el año 2003, tenía una capacidad de transferencia de datos de 2,5 GT/s (GigaTransfers por segundo) y de 250 MB/s por cada vía de datos.</p>
+<ul>
+<li><strong>PCIe 2.0</strong></li>
+</ul>
+<p>: del año 2007, doblaba la tasa de transferencia de datos a 5 GT/s y a 500 MB/s por cada vía de datos.</p>
+<ul>
+<li><strong>PCIe 3.0</strong></li>
+</ul>
+<p>: del año 2010, volvía a doblar las tasas de transferencia de archivos hasta los 8 GT/s y 984,6 MB/s por vía de datos. Precisamente por ello nunca hubo gran diferencia de rendimiento entre usar una tarjeta gráfica para este bus, en un bus PCIe 2.0.</p>
+<ul>
+<li><strong>PCIe 4.0:</strong></li>
+</ul>
+<p>del año 2017, vuelve a doblar las tasas de transferencia hasta los 16 GT/s y 1.969 MB/s. Este bus de datos ha comenzado a verse recientemente en las placas base para los procesadores AMD Ryzen 3000 y Threadripper 3.</p>
+<ul>
+<li><strong>PCIe 5.0</strong></li>
+</ul>
+<p>: su especificación se ha finalizó el año pasadoe año. Y, como es habitual, vuelve a doblar los datos de la anterior especificación hasta los 32 GT/S y 3.938 MB/s.</p>
+<ul>
+<li><strong>PCIe 6.0</strong></li>
+</ul>
+<p>: su especificación todavía no está finalizada (se la espera para el final del año 2021). Pero volverá a doblar las especificaciones anteriores, llegando hasta los 64 GT/s y 7.8777 MB/s por cada vía de datos.</p>
+<p>Una particularidad del bus PCIe, es que es un bus modular. Es decir, que
+ los conectores que se emplean en la placa base, no tienen todos las 
+mismas características. En función del número de vías de datos PCI 
+Express conectada a ellos, pueden ser conocidos como x1, x4, x8 o x 16.</p>
+<p>Esto
+ quiere decir que físicamente cada conector tiene un número de pines de 
+contacto determinado, donde por ejemplo el conector de mayor tamaño, el 
+x16, puede tener todos los contactos habilitados en su longitud, o en 
+cambio tener solo la mitad, lo que rebajaría su velocidad a x8 
+lógicamente.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen (6).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen (6).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="factor-de-forma-y-tarjetas-de-expansion">Factor de forma y tarjetas de expansión</h3>
+<p>Las tarjetas de expansión vienen preparadas para los diferentes factores de forma de las cajas de los equipos:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen (7).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen (7).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Dependiendo del factor de forma, debemos utilizar un</p>
+<p><strong>bracket</strong></p>
+<p>de</p>
+<p><strong>perfil alto</strong></p>
+<p>o de</p>
+<p><strong>pefil bajo</strong></p>
+<h2 id="3-tarjetas-graficas">3. Tarjetas gráficas</h2>
+<p>La tarjeta gráfica , también conocida como tarjeta de vídeo , tarjeta aceleradora de gráficos o adaptador de pantalla , es una de las más importantes del equipo, al ser la responsable de mostrar texto, imágenes y gráficos en el monitor .</p>
+<p>Muchas placas base actuales integran esta función; sin embargo, la mayoría de los ordenadores utilizan tarjetas gráficas para potenciar y mejorar la salida de datos hacia el monitor.</p>
+<p>Controla la apariencia, el movimiento, el color, el brillo y la claridad de las imágenes mostradas en el monitor o la televisión, procesando cada bit de datos enviado.</p>
+<p>La mayoría de las tarjetas gráficas actuales están diseñadas para la ranura PCI Express x16; las tarjetas PCI y AGP están prácticamente extintas.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen(1).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen(1).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="31-componentes">3.1. Componentes</h3>
+<h3 id="componentes">Componentes</h3>
+<h4 id="gpu-graphics-processing-unit">GPU (Graphics Processing Unit)</h4>
+<p><strong>Procesador</strong></p>
+<p>dedicado</p>
+<p><strong>específicamente al procesamiento de gráficos</strong></p>
+<p>para disminuir la carga de la CPU. Está</p>
+<p><strong>optimizado para el cálculo en coma flotante</strong></p>
+<p>, predominante en las funciones 3D. Busca mayor realismo en los efectos.</p>
+<p>Implementa determinadas</p>
+<p><strong>operaciones</strong></p>
+<p>gráficas llamadas</p>
+<p><strong>primitivas</strong></p>
+<p>que están optimizadas para el procesamiento gráfico como la primitiva</p>
+<p><strong>antialiasing</strong></p>
+<p>(suaviza los bordes de las figuras).</p>
+<p><strong>Frecuencia de reloj del núcleo</strong></p>
+<p>o núcleo gráfico (core) actualmente lo normal es entre 400 MHz y 900 MHz.</p>
+<p>Dos grandes fabricantes:</p>
+<p><strong>nVIDIA</strong></p>
+<p>y</p>
+<p><strong>ATI</strong></p>
+<p>(comprada por</p>
+<p><strong>AMD</strong></p>
+<p>),
+ pero las empresas que fabrican tarjetas gráficas como ASUS, MSI o 
+GIGABYTE optan por utilizar estos componentes y ya tienen en el mercado 
+tarjetas gráficas que van equipadas con dos GPU, como puede ser la ATI 
+ASUS 3870 X2.</p>
+<h4 id="memoria-de-video">Memoria de vídeo</h4>
+<p>En el caso de que la tarjeta gráfica esté integrada en</p>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/view.php?id=453117">la placa base</a></p>
+<p>, se utilizará la memoria RAM propia del ordenador, y si se instala</p>
+<p><strong>como tarjeta de expansión</strong></p>
+<p>, la tarjeta gráfica dispondrá de una</p>
+<p><strong>memoria propia</strong></p>
+<p>. Dicha memoria es la memoria de vídeo o VRAM.</p>
+<p>Asi, pues existen memorias gráficas de dos tipos:</p>
+<ul>
+<li><strong>Dedicada</strong></li>
+</ul>
+<p>: cuando la tarjeta gráfica o la</p>
+<p><strong>GPU dispone</strong></p>
+<p>exclusivamente para sí esas memorias, esta manera es la más eficiente y la que mejores resultados da.</p>
+<ul>
+<li><strong>Compartida</strong></li>
+</ul>
+<p>: cuando se utiliza memoria en detrimento de la memoria de acceso aleatorio (RAM).</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%282%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%282%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Su tamaño oscila entre los 128 MB y 1 TB.</p>
+<p>La memoria actual está</p>
+<p><strong>basada en tecnología DDR</strong></p>
+<p>, destacando GDDR2, GDDR3, GDDR4, GDDR5 y GDDR6, y en la nueva tecnología de AMD HBM (High Bandwidth Memory) y HBM2.</p>
+<p>La</p>
+<p><strong>frecuencia de reloj</strong></p>
+<p>de la memoria se encuentra en la mayoría de las tarjetas actuales entre
+ 400 MHz y 14 GHz. Frecuencias de reloj de memoria por tecnología:</p>
+<p>La memoria de vídeo tiene los siguientes</p>
+<p><strong>parámetros</strong></p>
+<p>:</p>
+<ul>
+<li><strong>Altura</strong></li>
+</ul>
+<p>: número de píxeles desde la parte inferior a la parte superior de la pantalla.</p>
+<ul>
+<li><strong>Anchura</strong></li>
+</ul>
+<p>: número de píxeles desde la parte izquierda a la parte derecha de la pantalla.</p>
+<ul>
+<li><strong>Profundidad del color</strong></li>
+</ul>
+<p>: número de bits usados para cada píxel o cantidad de colores que puede
+ mostrar una imagen. Cuantos más colores mejor calidad y por tanto, 
+mayor fidelidad con el original.</p>
+<ul>
+<li><strong>Resolución</strong></li>
+</ul>
+<p>: 
+número de puntos (píxeles) que es capaz de presentar una tarjeta de 
+vídeo en la pantalla, tanto en horizontal como en vertical. Por ejemplo,
+ 800 x 600 significa que la imagen está formada en total por 600 líneas 
+horizontales de 800 puntos cada una.</p>
+<p>La resolución se expresa como ancho x alto.</p>
+<ul>
+<li><strong>Cantidad de memoria de una tarjeta gráfica</strong></li>
+</ul>
+<p>(en bytes) : ancho x alto x profundidad de color / 8.</p>
+<p><strong>A mayor cantidad de memoria de vídeo</strong></p>
+<p>,
+ mayor será la cantidad de texturas que la tarjeta gráfica podrá 
+controlar cuando muestre gráficos 3D. Las tarjetas gráficas deben tener 
+memoria suficiente para almacenar la información de los datos de una 
+pantalla.</p>
+<p>La capacidad de la memoria también es importante porque afecta el número y la resolución de imágenes que puede almacenarse.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen (9).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen (9).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2810%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2810%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h5 id="como-calcular-la-memoria-necesaria-que-se-necesita-para-cierta-configuracion-de-pantalla">¿Cómo calcular la memoria necesaria que se necesita para cierta configuración de pantalla?</h5>
+<ul>
+<li>
+<p>1280 x 1024 con 32 bits por píxel</p>
+</li>
+<li>
+<p>1280 x 1024 = 1.310.720 píxeles:</p>
+</li>
+<li>
+<p>Cada uno de esos píxeles necesita 32 bits para almacenar su color.: 1.310.720 x 32 = 41.943.040 bits</p>
+</li>
+<li>
+<p>Tranformando a Bytes:&nbsp; 41.943.040 bits / 8 = 5.242.880 Bytes</p>
+</li>
+<li>
+<p>5.242.880 / 1024 = 5.120 KBytes / 1024 = 5 MB</p>
+</li>
+</ul>
+<h5 id="como-calcular-la-memoria-necesaria-que-se-necesita-para-cierta-configuracion-de-pantalla_1">¿Cómo calcular la memoria necesaria que se necesita para cierta configuración de pantalla?</h5>
+<ul>
+<li>
+<p>1920 x 1200 con 32 bits por píxel</p>
+</li>
+<li>
+<p>1920 x 1200 = 2.304.000 píxeles</p>
+</li>
+<li>
+<p>Cada uno de esos píxeles necesita 32 bits para almacenar su color: 2.304.000 x 32 = 73.728.000 bits</p>
+</li>
+<li>
+<p>Tranformando a Bytes:&nbsp; 73.728.000 bits / 8 = 9.216.000 Bytes</p>
+</li>
+<li>
+<p>9.216.000 / 1024 = 9.000 KBytes / 1024 = 8.79 MB =&nbsp; ~ 9MB</p>
+</li>
+</ul>
+<p>Recuerda las resolluciones de pantalla estandar:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/imagen (11).png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/imagen (11).png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h4 id="ramdac">RAMDAC</h4>
+<p>El</p>
+<p><strong>convertidor digital-analógico de memoria de acceso aleatorio</strong></p>
+<p>(RAMDAC) es un conversor de señal digital a señal analógica de memoria RAM. Se usa en la</p>
+<p><strong>transformación de señales digitales</strong></p>
+<p>(con las que trabaja la tarjeta gráfica)</p>
+<p><strong>a señales analógicas</strong></p>
+<p>(para poder ser interpretadas por algunos monitores).</p>
+<p>El
+ RAMDAC es capaz de dar soporte a diferentes velocidades de refresco del
+ monitor (se recomienda trabajar a partir de 75 Hz, nunca con menos de 
+60).</p>
+<p>Debido a la popularidad de los monitores digitales y a que parte de su funcionalidad se ha trasladado a</p>
+<p><a href="https://aules.edu.gva.es/fp/mod/book/view.php?id=453117">la placa base</a></p>
+<p>,</p>
+<p><em>el RAMDAC está quedando obsoleto.</em></p>
+<p>La
+ frecuencia de actualización (o velocidad de refresco) es el número de 
+veces que se dibuja la imagen en la pantalla por segundo y se mide en 
+herzios. Por ejemplo, 72 Hz significa que la pantalla se dibuja 72 veces
+ por segundo.</p>
+<h3 id="32-gpu-y-arquitectura">3.2. GPU y Arquitectura</h3>
+<p>Los procesadores gráficos tienen una infinidad de parámetros de rendimiento y además están construidos bajo distintas arquitecturas y fabricantes. En esta lista solamente podremos las últimas tecnologías de cada fabricante, así como las características que debes ser tenidas en cuenta para cada uno de ellos.</p>
+<h5 id="arquitectura-turing-nvidia">Arquitectura Turing (Nvidia)</h5>
+<p>Toda tarjeta gráfica que lleve en su nombre RTX, será de tecnología Turing, y es la tecnología más novedosa de la marca y que nos ofrece las tarjetas gráficas de mayor rendimiento en la actualidad. La arquitectura Turing fabrica procesadores con transistores de 12 nm y optimizados para el Ray Tracing , o trazado de rayos en tiempo real, Realidad Virtual (VR) e Inteligencia Artificial. En las características de los procesadores de las Nvidia RTX podremos identificar los núcleos CUDA , núcleos Tensor y núcleos RT (procesador de Rayos dedicados) dedicados), y la frecuencia de reloj del procesador. Mientras mayores sean las cifras de estos núcleos y frecuencia, mayor rendimiento ofrecerá la tarjeta gráfica. Los núcleos CUDA ( Compute Unified Device Architecture ), también llamado CUDA Core o CUDA Cores , es como un mini procesador que se encarga de cierto tipo de instrucciones, que suelen poder ejecutarse de manera paralela con kits de desarrollo de software de NVIDIA CUDA 10, FleX y PhysX para crear simulaciones complejas, como dinámicas de partículas o fluidos para visualizaciones científicas, entornos virtuales y efectos especiales.</p>
+<h3 id="diferencias-entre-cpu-y-gpu">Diferencias entre CPU y GPU</h3>
+<p>La</p>
+<p><strong>GPU</strong></p>
+<p>está especializada en cómputo intensivo,</p>
+<p><strong>computación</strong></p>
+<p>altamente</p>
+<p><strong>paralela</strong></p>
+<p>y sus transistores se dedican al procesamiento de datos en lugar de almacenamiento en cache de datos y control de flujo</p>
+<p>La</p>
+<p><strong>CPU</strong></p>
+<p><strong>pocos</strong></p>
+<p><strong>núcleos</strong></p>
+<p>pero</p>
+<p><strong>complejos</strong></p>
+<p>.</p>
+<p>La</p>
+<p><strong>GPU</strong></p>
+<p>tiene</p>
+<p><strong>miles</strong></p>
+<p>de</p>
+<p><strong>núcleos</strong></p>
+<p><strong>sencillos</strong></p>
+<p>, orientados al cálculo (unidades de cálculo FPU independientes).</p>
+<p>La GPU no sigue la arquitectura Von Neuman, si no el Modelo Circulante basado en la Segmentación y el Procesamiento Paralelo.</p>
+<p>La CPU sigue la arquitectura Von Neuman.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%283%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%283%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="33-interfaces-con-placa-base">3.3. Interfaces con placa base</h3>
+<p>Existen varios tipos de interfaces que se utilizan para conectar las tarjetas gráficas, aunque en la actualidad prácticamente han desaparecido los formatos PCI y AGP y solo se usa el PCI Express x16. Actualmente se están vendiendo tarjetas gráficas que además de los 16 lanes (x16) soportan el estándar 2.1, lo que supone una tasa de transmisión de 1 GB/s por lan, llegando a los 16 GB/s de ancho de banda (1 GB/s x 16).</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2812%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2812%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2813%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2813%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2814%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2814%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="34-salidasconectores-de-la-tarjeta-grafica">3.4. Salidas/conectores de la tarjeta gráfica</h3>
+<h3 id="svga-super-video-graphic-array-super-vga">SVGA (Super Video Graphic Array - Super VGA)</h3>
+<p>Conjunto de estándares gráficos diseñados en la década de 1990 para dispositivos CRT; monitor analógico de rayos catódicos.</p>
+<p>Sufre de ruido eléctrico y distorsión por la conversión de digital a analógico. El conector utilizado es el D-sub de 15 pines (DB-15).</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2816%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2816%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="dvi">DVI</h3>
+<p>Sustituto del anterior, fue diseñado para obtener la máxima calidad de visualización en las pantallas digitales. El DVI también tiene implementado un sistema de mayor envergadura denominado DVI Dual-Link, que permite resoluciones de 2048 × 1536 píxeles.</p>
+<p>Hace corresponder directamente un píxel a representar con uno del monitor en su resolución nativa. Interfaz de video diseñada para obtener la máxima calidad de visualización en pantallas digitales (TFT, LCD, Plasma). La ventaja frente a VGA está en que el monitor (que es digital) ya recibe la información en formato digital y no se deben hacer conversiones.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2817%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2817%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Los conectores DVI se clasifican en tres tipos en función de qué señales admiten:</p>
+<ul>
+<li>
+<p>DVI-D (solamente digital)</p>
+</li>
+<li>
+<p>DVI-A (solamente analógica)</p>
+</li>
+<li>
+<p>DVI-I (digital y analógica)</p>
+</li>
+</ul>
+<p>A veces se denomina DVI-DL a los conectores que admiten dos enlaces.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/DVI_Connector_Types.svg.png" data-desc-position="bottom"><img alt="Imagen" src="./imgs/expansion/DVI_Connector_Types.svg.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/M1-DA.svg.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/M1-DA.svg.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="hdmi-high-definition-multimedia-interface">HDMI (High-Definition Multimedia Interface)</h3>
+<p>Se trata de una interfaz capaz de transmitir señal de vídeo estándar, mejorado o de alta definición, así como audio de alta definición (de hasta ocho canales). Actualmente se está utilizando la versión 2.1. Las especificaciones de este tipo de conector permiten un ancho de banda de 48GB/s para dar soporte de 64Hz para monitores 8K y 120Hz para 4K. Compatible con HD-DVD y Blu-Ray.</p>
+<p>El conector estándar de HDMI tipo A (que es el que se utiliza actualmente) tiene 19 pines.</p>
+<p>Se ha definido también una versión de 29 pines (tipo B), que permite llevar un canal de vídeo expandido para pantallas de alta resolución, superiores a las del formato 1080p.</p>
+<p>El HDMI tipo A es compatible con un conector tipo DVI; es decir, que una tarjeta gráfica DVI puede conectarse a un monitor HDMI, y viceversa, mediante un adaptador.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2822%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2822%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="displayport">DisplayPort</h3>
+<p>Puerto para tarjetas gráficas creado por VESA y rival del HDMI, transfiere vídeo a alta resolución y audio.</p>
+<p>Sus ventajas son que está libre de patentes, y por ende de regalías para incorporarlo a los aparatos, también dispone de unas pestañas para anclar el conector impidiendo que se desconecte el cable accidentalmente.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2823%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2823%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Cada vez más tarjetas gráficas van adoptando este sistema, aunque sigue siendo su uso minoritario, existe una versión reducida de dicho conector llamada Mini DisplayPort, muy usada para tarjetas gráficas con multitud de salidas simultáneas, como pueden ser 5.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2824%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2824%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Al igual que ocurre con HDMI, DisplayPort también es capaz de enviar audio, donde cada versión de dicha interfaz agrega mejoras en este apartado por norma general. Así, es capaz de transmitir audio Dolby, MAT, DRA o DTS HD con un máximo de 8 canales sin compresión a 192 kHz, 24 bits y 6,144 Mb/s.</p>
+<p>Lo que más define a DisplayPort es la velocidad y los tipos de conectores que ha ido adquiriendo a modo de compatibilidad con el paso de las versiones.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./imgs/expansion/2Q==" data-desc-position="bottom"><img alt="HDMI o DisplayPort ¿Cuál es más adecuado según el tipo de uso? - MuyComputer" src="./imgs/expansion/2Q==" width="85%"></a>
+  <figcaption>HDMI o DisplayPort ¿Cuál es más adecuado según el tipo de uso? - MuyComputer</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2825%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2825%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Actualmente, VESA ha presentado la versión 2.0, la cual es la más avanzada hasta la fecha y trae grandes mejoras. DisplayPort comenzó con una velocidad máxima de 8,64 Gb/s en mayor de 2006, apoyándose en un cableado de cobre y fibra, con soporte para HDCP y DPCP y sonido 7.1 digital.</p>
+<p>Con el paso de las versiones se han añadido soporte para MST, mejoras de la sincronización de audio y vídeo, adaptadores pasivos, soporte para 4K, 8K y 16K (15360 x 8460 @ 60 Hz), soporte para HDMI 2.0, DockPort, un aumento de velocidad de hasta 77,4 Gb/s, mapeo del flujo de datos, soporte para Thunderbolt y USB-C y un menor consumo.</p>
+<p>Actualmente, más de 280 fabricantes apoyan directamente esta interfaz, en especial Intel, AMD y NVIDIA, los cuales están apostando muy fuerte por ella debido a sus mayores posibilidades y velocidades frente a HDMI.</p>
+<h3 id="thunderbolt">Thunderbolt</h3>
+<p>La interfaz</p>
+<p><strong>Thunderbolt</strong></p>
+<p>es un estándar para la</p>
+<p><strong>transmisión de datos y energía</strong></p>
+<p>en diferentes tipos de dispositivo. Originalmente conocido como Light Peak, fue desarrollado por Intel en colaboración con Apple, que fue la única que dio respaldo comercial realmente sólido a esta interfaz, a la que dio ese nombre por el que fue conocida a posteriori. Su tercera versión fue presentada en 2015, y es la que nos ocupa hoy.</p>
+<p>Existe un poco de confusión a la hora de hablar de esta tecnología, sobre todo a la hora de diferenciarla del USB de tipo C. Esto es así porque el</p>
+<p><strong>Thunderbolt 3 utiliza un puerto USB-C</strong></p>
+<p>, o sea que su aspecto es el mismo exteriormente, pero</p>
+<p><strong>no todos los USB de tipo C son Thunderbolt</strong></p>
+<p>debido a diferencias en su interior.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2826%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2826%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>La</p>
+<p><strong>velocidad de transmisión</strong></p>
+<p>del Thunderbolt 3 es de hasta</p>
+<p><strong>40 Gbps (5 GB/s)</strong></p>
+<p>, cuatro veces más que el USB 3.1 y el Thunderbolt original. que ofrecían 10 Gbps. (los discos duros SSD andan entre 200 y 550 MB/s). Además, también soporta conexiones DisplayPort 1.2, HDMI 2.0, y Ethernet 10 Gigabit.</p>
+<p>Gracias a la velocidad, el Thunderbolt 3 puede utilizarse para conectar monitores de alta resolución al mismo tiempo. Por ejemplo, uno 5K, dos 4K, o tres FullHD. También permite enchufar las siempre exigentes tarjetas gráficas externas, todo con un mismo conector que también servirá para estar cargando tu equipo.</p>
+<h3 id="tarjetas-graficas-mediante-usb">Tarjetas gráficas mediante USB</h3>
+<p>Aunque existen en el mercado desde hace tiempo, no han tenido mucha aceptación entre el público debido</p>
+<p>a su poca potencia.</p>
+<p>Son relativamente baratas y normalmente se van a utilizar para dotar a un equipo de más monitores o proyectores en paralelo.</p>
+<p>La mayoría dispone de los tipos de salida VGA y DVI, aunque aprovechando la tecnología USB 3.0 se están fabricando tarjetas gráficas USB con salida HDMI.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2827%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2827%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2828%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2828%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="diferencias">Diferencias:</h3>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2829%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2829%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="adaptadores">Adaptadores</h3>
+<p>Dada la diversidad de conectores que hemos visto, existen una serie de apatados entre uno y otros:</p>
+<h5 id="desde-vga-a-dvi">Desde VGA a DVI</h5>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2830%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2830%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h5 id="de-vga-a-hdmi">De VGA a HDMI</h5>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2831%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2831%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h5 id="de-displayport-a-dvi">De DisplayPort a DVI</h5>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2832%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2832%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>De DisplayPort a HDMI</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2833%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2833%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="35-tarjetas-graficas-integradas-y-dedicadas">3.5. Tarjetas gráficas integradas y dedicadas</h3>
+<p>Las unidades de procesamiento gráfico se clasifican normalmente en dos tipos: GPU integradas y GPU dedicadas. Las tarjetas gráficas integradas tienen la ventaja de ser más baratas , lo que a su vez conduce a un ordenador menos costoso. También disipan mucho menos calor que las GPU dedicadas y, por lo tanto, permiten máquinas compactas con sistemas de refrigeración relativamente pequeños. Además, un portátil que se basa únicamente en gráficas integradas será más eficiente en el consumo de energía para una mayor duración de la batería. La compensación es, por supuesto, el rendimiento que obtienes. Las GPU integradas son perfectas para tareas casuales como ver vídeos y procesar documentos gráficos. Las unidades dedicadas o discretas , por otra parte, vienen con su propia memoria de vídeo , que es usada de manera exclusiva para el procesamiento gráfico. Además cuestan más y requieren fuentes de alimentación y sistemas de refrigeración elaborados. Para juegos intensos, son la mejor opción.</p>
+<p>La recomencación de uso sería:</p>
+<ul>
+<li><strong>Procesador con tarjeta gráfica integrada</strong></li>
+</ul>
+<p>: Usuarios que son jugadores ocasionales que no le importa bajar la resolución (720p) y sus filtros (calidad baja o media), tareas básicas: ofimática, navegación web, ver vídeos o retocar a nivel amateur retoque fotográfico.</p>
+<ul>
+<li><strong>Tarjeta gráfica dedicada</strong></li>
+</ul>
+<p>: Usuarios que quieren jugar fluidamente, con buena resolución y gráficamente al máximo en su ordenador. También da un empujón en el renderizado de vídeos o en aplicaciones que sacan el máximo provecho a su tarjeta gráfica. Sin olvidarnos, de aquellos usuarios que quieren estar siempre a la última.</p>
+<h3 id="diferentes-tipos-de-tarjetas-integradas">Diferentes tipos de tarjetas integradas</h3>
+<h4 id="igpu">iGPU</h4>
+<p>Algunas CPU pueden incorporar un procesador gráfico llamado</p>
+<p><strong>iGPU</strong></p>
+<p>, que no es sino una GPU integrada pero que funciona de manera independiente. De esta manera, se consigue que sin necesidad de una tarjeta gráfica dedicada podamos visualizar el contenido en un monitor, aunque en estos casos el rendimiento es bastante bajo debido a las limitaciones físicas que tienen.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%285%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%285%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Como características principales tenemos:</p>
+<ul>
+<li>
+<p>Comparte encapsulado normalmente con la CPU pero también podemos encontrar versiones soldadas a la placa.</p>
+</li>
+<li>
+<p>Una iGPU consume RAM del equipo.</p>
+</li>
+<li>
+<p>Las iGPU integradas tienen una pequeña cantidad de memoria que puede ser de diferentes tipos pero a la hora de cargar juegos o aplicaciones gráficas intensivas recurren a la RAM principal y la utilizan como memoria de vídeo.</p>
+</li>
+<li>
+<p>La RAM del PC se verá reducida en relación al consumo de la iGPU. Si nuestro equipo tiene 4 GB y la iGPU consume 2 GB sólo tendremos otros 2 GB para el sistema.</p>
+</li>
+<li>
+<p>Al recurrir a la RAM principal en el ancho de banda de la iGPU influye la velocidad de trabajo de la memoria (Hay que apostar por configuraciones en doble canal o superiores para mejorar el rendimiento).</p>
+</li>
+</ul>
+<h4 id="apu">APU</h4>
+<p>Como una variante de las CPU con iGPU, en 2011 AMD lanzó el concepto de</p>
+<p><strong>APU</strong></p>
+<p>, que se diferencia de éstas en que el hardware para gráficos que integra no solo es bastante más potente (de hecho, AMD las vende como dispositivos para jugar), sino que tienen una diferencia fundamental, la arquitectura HSA (heterogénea).</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2834%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2834%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>La arquitectura HSA permite el procesamiento paralelo y permite que la GPU trabaje junto con la CPU , lo que da un rendimiento general superior.</p>
+<p>De este modo, la APU elimina el bus entre la CPU y la GPU para integrar ambas unidades en el mismo chip. Por tanto, una APU es más rápida en tareas gráficas pequeñas , que una CPU y GPU por separado.</p>
+<p>Obviamente, tiene sus limitaciones : no podemos pretender que los gráficos integrados de la APU den el mismo rendimiento que una GPU dedicada en, por ejemplo, videojuegos. Sin embargo, en tareas pequeñas, tener una GPU puede ser un malgasto, siendo mejor opción una APU.</p>
+<h5 id="_1"></h5>
+<h5 id="_2"></h5>
+<h5 id="versiones">Versiones:</h5>
+<p><strong>AMD: APU:</strong></p>
+<ul>
+<li>
+<p>Excavator architecture (2016): Bristol Ridge and Stoney Ridge</p>
+</li>
+<li>
+<p>Zen architecture (2017): Raven Ridge INTEL HD and Iris Graphics</p>
+</li>
+</ul>
+<p><strong>IntelHD and Iris Graphics</strong></p>
+<ul>
+<li>
+<p>Iris Pro Graphics 6200 (128MB memoria dedicada de vídeo).</p>
+</li>
+<li>
+<p>Intel HD Graphics 6000 (64MB de memoria dedicada de vídeo).</p>
+</li>
+</ul>
+<h3 id="36-slicrossfire">3.6. SLI/Crossfire</h3>
+<p>El procesamiento en paralelo es un método para conectar dos o más tarjetas de video PCI Express para producir una sola señal de salida que incremente la capacidad de procesamiento disponible para gráficos En un principio las dos tarjetas deberían ser idénticas mismo fabricante y modelo, sin embargo, hoy no es necesario siempre que se empleen las últimas versiones de los controladores suministrados por el fabricante El excedente de memoria no se utilizaría en el funcionamiento conjunto y además las GPU de las tarjetas deben de ser idénticas . Según sea el fabricante de GPU se la denomina</p>
+<ul>
+<li><strong>SLI</strong></li>
+</ul>
+<p>(Scalable Link Interface), de la empresa</p>
+<p><strong>nVidia</strong></p>
+<ul>
+<li><strong>Crossfire</strong></li>
+</ul>
+<p>de la empresa</p>
+<p><strong>ATI/AMD</strong></p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2837%29.png" data-desc-position="bottom"><img alt="GeForce GTX 980 TI SLI" src="../imgs/expansion/imagen%20%2837%29.png" width="85%"></a>
+  <figcaption>GeForce GTX 980 TI SLI</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2838%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2838%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Para unir dos o más tarjetas gráficas se emplea un conector que hace de puente entre ellas, normalmente en la parte superior, y solamente una de las tarjetas se conectara con el monitor.</p>
+<p>En todo caso, es una tecnología que no esta prestando los servicios que se esperaban . El muti-GPU parece que solo aprovecha juegos 4K y ofrecen problemas para comportase como se espera, por lo que la evución de estas tecnologías dejo de promoverse en 2018</p>
+<h3 id="37-refrigeracion">3.7. Refrigeracíon</h3>
+<p>Las tarjetas gráficas alcanzan temperaturas muy altas debido a carga trabajo si no se soluciona puede fallar o averiarse. Solución dispositivos refrigerantes tipos:</p>
+<h5 id="disipador-dispositivo-pasivo">Disipador dispositivo pasivo:</h5>
+<ul>
+<li>
+<p>Sin partes móviles y por tanto silencioso.</p>
+</li>
+<li>
+<p>Hecho de material conductor del calor que lo extrae de la tarjeta.</p>
+</li>
+<li>
+<p>Suelen ser bastante voluminosos.</p>
+</li>
+</ul>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2839%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2839%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h5 id="ventilador-dispositivo-activo">Ventilador dispositivo activo:</h5>
+<ul>
+<li>
+<p>Con partes móviles y produce ruido.</p>
+</li>
+<li>
+<p>Aleja el calor emanado de la tarjeta al mover el aire cercano.</p>
+</li>
+<li>
+<p>Es más eficiente que un disipador</p>
+</li>
+</ul>
+<p>Ambos tipos de dispositivos refrigerantes son compatibles entre sí y suelen montarse juntos en las tarjetas gráficas: un disipador sobre la GPU (componente que más calor genera) extrae el calor y un ventilador sobre él aleja el aire caliente del conjunto. Además de los dispositivos refrigerantes propios de la tarjeta, se pueden instalar en el ordenador otros ventiladores externos.</p>
+<h3 id="38-alimentacion">3.8. Alimentación</h3>
+<p>Actualmente casi todas las tarjeta gráficas dedicadas requieren alimentación auxiliar , dado que estas tarjetas de expansión, cada vez consumen más y el puerto PCIe de nuestra placa base no es capaz de suministrar más de 75 W de potencia, es habitual que incluso modelos de gama baja necesiten este tipo de alimentación.</p>
+<p>En un principio esta alimentación adicional no era necesaria, pero poco a poco la potenia de las tarjetas ha demandado más energía y ha propicidado la necesidad de suministro externo.</p>
+<p>A continuación tenemos los diferentes contectores usado a lo largo de los años para alimentar las tarjetas gráficas:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2841%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2841%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Inicialmente se utilizaban conectores Molex, pero en la actualidad es más habitual encontrar conectores PCI-E de 6 u 8 pines.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2842%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2842%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Es necesario comprobar que la potencia de la fuente de alimentación del equipo sea suficiente. Las nuevas tarjetas gráficas de gran potencia necesitan una alimentación específica que dependerá del modelo y sus prestaciones.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2843%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2843%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>El cable de alimentación auxiliar para tarjetas gráficas se caracteriza por tomar toda su potencia desde el raíl +12 V de la fuente de alimentación. Ello es así porque las gráficas solo usan ese tipo de alimentación para funcionar. Los colores de los cables individuales suelen ser amarillo (para la tensión) y negro para el neutro. También hay cables adaptadores que permiten usar conectores de alimentación molex o SATA para suplir la ausencia de estos en nuestra fuente de alimentación. Este tipo de cable es más moderno. Inicialmente se usaban adaptadores que se conectaban a dos conectores molex de la fuente de alimentación. De hecho, hoy en día, este tipo de adaptador de alimentación sigue siendo el más extendido. Y el que más suelen distribuir los fabricantes de tarjetas gráficas con sus modelos. Como ya se ha comentado, el conector de alimentación es del tipo 6+2. Esto significa que su cuerpo principal es un conector de 6 pines. Al que se le pueden añadir dos pines extra, si la gráfica lo necesitara. Esto da mucha flexibilidad a los fabricantes de gráficas y fuentes. Así como beneficia a los usuarios, en el caso de tener alguna de las primeras gráficas que usaban solo el conector inicial de 6 pines. El motivo de la existencia de los dos tipos de conectores, es que uno de ellos es capaz de proporcionar 75 W extra (el de 6 pines), mientras que el otro conector proporciona hasta 150 W de potencia extra (el de 8 pines). A esto hay que sumarle los 75 W que proporciona la ranura PCIe de la placa base a la tarjeta gráfica.</p>
+<p>Fuente: Tipos de alimentación para tarjetas gráficas</p>
+<h3 id="39-multimonitor">3.9. Multimonitor</h3>
+<p>Con la bajada de precios de los monitores actuales y el aumento de la potencia de las tarjetas gráficas, cada vez se está extendiendo más la utilización de varios monitores en paralelo, tanto para juegos como para trabajo (diseño gráfico, hojas de cálculo muy grandes, etc.). Para ello y dependiendo del hardware del que dispongamos, se puede llegar a utilizar más de seis pantallas simultáneamente con un único ordenador. Dispondremos de varios formatos de trabajo, entre ellos:</p>
+<ul>
+<li><strong>En espejo</strong></li>
+</ul>
+<p>: Se replica la imagen en todos los monitores. En todos se ve lo mismo.</p>
+<ul>
+<li><strong>Escritorio extendido</strong></li>
+</ul>
+<p>: Se detectan y enumeran los monitores, y en cada uno de ellos se muestra parte de nuestro escritorio. Puede orientarse en vertical u horizontal.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%286%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%286%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Para realizar estas tareas de configuración utilizaremos normalmente el sistema operativo o el software propietario de la marca de nuestra tarjeta gráfica:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2850%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2850%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h2 id="4-tarjetas-de-red">4. Tarjetas de red</h2>
+<p>También conocidas como adaptador de red o NIC ( Network Interface Card ) y se usan para conectar ordenadores entre sí para compartir recursos y poder formar una red. Hay distintos tipos de tarjetas de red, en función del tipo de cable o arquitectura que se utilice en la red (coaxial fino, coaxial grueso, fibra de vidrio, etc.) pero el más utilizado es del tipo Ethernet con un conector RJ-45 (la mayoría de placas base la tienen integrada).</p>
+<p>Por otra parte, cada vez está más extendido el uso de redes Wi-Fi .</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%287%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%287%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="41-tarjeta-para-redes-cableadas">4.1. Tarjeta para redes cableadas</h3>
+<p>Las redes pequeñas se denominan redes de área local o LAN (Local Area Network). En este caso, la red se establece con un cable y componentes hardware que comunican todos los ordenadores. La tarjeta de red comunica al ordenador con una red local, y suele instalarse en una ranura PCIe de la placa, aunque también tenemos otras alternativas tal y como veremos a continuación.</p>
+<p>Comencemos viendo un ejemplo de tarjeta de red con interfaz PCIe 1x , que viene acompañada de sus dos brackets para ajustarar a cajas con perfil alto o bajo.</p>
+<h3 id="conectores">Conectores</h3>
+<p>La salida de conexión de la tarjeta de red debe ser del mismo tipo que el cableado a usar conector más utilizado RJ-45 para el cable de par trenzado.</p>
+<p>Tipos de cable de par trenzado:</p>
+<p>Antes se utilizaban los conectores BNC para el tipo de cable coaxial pero su uso está obsoleto. Existen tarjetas de red híbridas que permiten los dos sistemas de conexión.</p>
+<p>Cable BNC:</p>
+<p>Disponen de LEDs que se iluminan según la actividad de la tarjeta</p>
+<h3 id="_3"></h3>
+<h3 id="direccion-mac-media-control-address">Dirección MAC (Media Control Address)</h3>
+<p>Se trata de un código identificador de 48 bits (6 bytes) individual que corresponde de forma única a una tarjeta. Cada dispositivo tiene su propia MAC determinada y configurada por el IEEE (los últimos 24 bits) y el fabricante (los primeros 24 bits). Se codifican en hexadecimal: son 12 números en hexadecimal agrupados de 2 en 2. Por ejemplo: 00-16-E6-5E-7B-74 . Las direcciones MAC o direcciones físicas son únicas a nivel mundial son escritas en el hardware en el momento de su fabricación de forma binaria.</p>
+<h3 id="velocidad">Velocidad</h3>
+<p>Una tarjeta de red puede trabajar a distintas velocidades, en función de la tecnología y los estándares que soporte. Estándares más utilizados:</p>
+<ul>
+<li><strong>Ethernet</strong></li>
+</ul>
+<p>10 Mb/s.</p>
+<ul>
+<li><strong>Fast Ethernet</strong></li>
+</ul>
+<p>100 Mb/s.</p>
+<ul>
+<li><strong>Gigabit Ethernet</strong></li>
+</ul>
+<p>1000 Mb/s.</p>
+<p>Es común que las tarjetas de red actuales soporten las 3 velocidades y se adapten a la velocidad del resto de los componentes de la red.</p>
+<h5 id="wake-on-lan-wol">Wake on LAN (WoL)</h5>
+<p>Estándar de redes de computadoras Ethernet que permite encender remotamente ordenadores apagados mediante el envío de un Magic Packet, paquete especial que recibe la tarjeta de red. El soporte WoL está implementado en la placa base del ordenador y la mayoría de las placas base modernas cuentan con un controlador. Ethernet que incorpora WoL sin necesidad de un cable externo. Las placas base antiguas necesitaban un conector WAKEUP-LINK que debía estar enchufado a la tarjeta a través de un cable de 3 pines especial. Debe estar habilitado en la sección administración de energía de la BIOS. También es posible que sea necesario configurar el equipo para proveer energía a la tarjeta de red cuando el sistema está apagado. Puede ser necesario activar la características WoL en la tarjeta de red (cómo hacerlo dependerá del sistema operativo y de los drivers). En tarjetas con soporte WoL que necesiten cable para recibir alimentación: debe tener un conector de 3 pines y desde ese conector debemos conectar un cable a la placa base. Tanto la tarjeta de red, como la placa base han de soportar esta tecnología.</p>
+<h3 id="tarjeta-de-red-mediante-adaptador-usb">Tarjeta de red mediante adaptador USB</h3>
+<p>Este dispositivo consiste en un adaptador de red con un puerto USB y un puerto RJ-45 10/100/1000 Mb/s Fast/Giga Ethernet. Se puede conectar a cualquier ordenador o portátil dotado de un puerto USB, convirtiendo así la interfaz USB en un puerto de red LAN tipo Ethernet o Fast/Giga Ethernet 10/100/1000 Mb/s. Como la mayoría de dispositivos USB, se elimina la necesidad de instalar y utilizar tarjetas PCI para ofrecer conectividad LAN al ordenador.</p>
+<h3 id="42-tarjeta-para-redes-wifi">4.2. Tarjeta para redes Wifi</h3>
+<p>Wi-Fi es una marca de la Wi-Fi Alliance, la organización comercial que adopta, prueba y certifica los estándares 802.11 .</p>
+<p>Es un sistema de envío de datos para redes informáticas que usa ondas de radio en lugar de cables:</p>
+<ul>
+<li>
+<p>Instalación rápida.</p>
+</li>
+<li>
+<p>Menos seguridad que con cable.</p>
+</li>
+<li>
+<p>Menor velocidad de transmisión de datos que con cable.</p>
+</li>
+</ul>
+<p>Transmite la información mediante tarjetas de red con una o varias antenas a través de routers o puntos de acceso. Los datos pueden ser enviados mediante algoritmos y procesos de cifrado para mejorar la seguridad. En el mercado se pueden encontrar tarjetas de expansión de red para Wi-Fi en formato PCIe pero se está imponiendo el uso de adaptadores red Wi-Fi en formato stickers USB por su facilidad de instalación y portabilidad.</p>
+<p>Las tarjetas de expansión de red Wi-Fi habilitan al equipo para acceder a este tipo de redes y también tienen dirección MAC.</p>
+<h2 id="clases-de-normas-ieee-80211-para-wlan">Clases de normas IEEE 802.11 para WLAN</h2>
+<p>Lo de WMAN y WWLAN está muy bien, pero consideramos que no es un tema a tratar aquí, ya que estamos centrándonos en las redes inalámbricas ámbito local .</p>
+<p>Entonces será importante conocer las distintas versiones del estándar o nombra IEEE 802.11 para así conocer las velocidades y características que aporta cada versión.</p>
+<h4 id="ieee-80211abg">IEEE 802.11a/b/g</h4>
+<p>Estos estándares se consideran identificadores de canales y frecuencias por donde se conectarán los hosts a la WLAN.</p>
+<p>Con 802.11a opera sobre las bandas de 5 GHz a 20 MHz y 2,4 GHz , las dos más utilizadas en Wi-Fi al menos en la zona de Europa. Además, en esta zona opera junto a 802.11h que realiza ciertas modificaciones en el control dinámico de frecuencias y potencias de transmisión para que no existan interferencias con señales por satélite y sistemas de radar.</p>
+<p>802.11 b y g están operando solamente en la banda de 2,4 GHz dotándola de 11 canales para WiFi de los cuales normalmente se utilizan el 1, 6 y 11. En esta banda se opera a una frecuencia de 25 MHz como ancho de banda. La velocidad de transmisión en la versión “b” es de 54 Mbps sin capacidad de envío OFDM implementado en la última versión disponible.</p>
+<h4 id="ieee-80211n">IEEE 802.11n</h4>
+<p>Esta versión del estándar empezó a operar en 2008 aunque se definió en 2004. La velocidad asciende a los 600 Mbps en conexiones como máximo de 3×3 (3 antenas). Utiliza de forma simultánea las bandas de 2,4 GHz y 5 GHz . Fue el primero en implementar la tecnología MIMO (Multiple Input – Multiple Output) que permite usar varios canales a la vez para el envío y recepción de datos con hasta 3 antenas.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2863%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2863%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Aún no llegamos a tasas de velocidad comparables a cableado LAN, pero el poder utilizar ambas frecuencias con un mismo punto inalámbrico toda a los dispositivos de gran cobertura.</p>
+<h5 id="ieee-80211ac">IEEE 802.11ac</h5>
+<p>También se denomina WiFi 5 y fue implementado en el año 2014 y a día de hoy la mayoría de aparatos trabajan sobre esta versión. En este caso es una versión que solamente opera en la banda de 5 GHz para proporcionarnos velocidades de 433 Mbps en conexiones con una antena (1×1) y hasta 1,3 Gbps en 3×3 . Su máxima transferencia será de 3,39 Gbps utilizando 4 antenas a una frecuencia de 160 MHz o 6,77 Gbps con 8 antenas.</p>
+<p>Este estándar implementa tecnología MU-MIMO con hasta 8 flujos de datos con ancho de bandas de hasta 160 MHz y 256 QAM . Normalmente opera junto a 802.11n para los dispositivos que utilicen la banda de 2,4 GHz.</p>
+<h5 id="ieee-80211ax">IEEE 802.11ax</h5>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2864%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2864%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Esta es la nueva versión también denominada WiFi 6 y WiFi de 6ª generación implementada en 2019 y que muchos equipos ya tienen soporte gracias al nuevo hardware. Además de MU-MIMO, se introduce la nueva tecnología OFDMA que mejora la eficiencia espectral de la red para WLAN en donde haya conectados gran cantidad de usuarios. Por ello es un estándar que sobre todo aumenta sus prestaciones con grandes cargas de clientes y transmisiones simultaneas.</p>
+<p>Opera sobre las frecuencias de 2,4 GHz y 5 GHz , y soporta conexiones 4×4 y 8×8 en ambos casos. La velocidad de transmisión aumenta hasta los 11 Gbps con la frecuencia de 160 MHz y 1024QAM.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2865%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2865%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2866%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2866%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="_4"></h3>
+<h3 id="tarjetas-de-red-wi-fi-usb">Tarjetas de Red Wi-Fi USB</h3>
+<p>Actualmente están apareciendo en el mercado tarjetas de red Wi-Fi que se conectan a través de los puertos USB. Hay varios tipos en función de las necesidades del usuario:</p>
+<ul>
+<li><strong>Nanowireless</strong></li>
+</ul>
+<p>: tarjetas de tamaño muy pequeño que se colocan en el conector USB para dotar al equipo de funcionalidad Wi-Fi. Apenas sobresalen, son muy baratas y de cómodo transporte.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2867%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2867%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2868%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2868%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<ul>
+<li><strong>Tarjetas con antena externa</strong></li>
+</ul>
+<p>: tarjetas que disponen de un conector para acoplar una antena externa. Normalmente este conector es de tipo RP-SMA. El objetivo de este tipo de tarjeta+antena es el de potenciar la señal de emisión/recepción del equipo. Por ejemplo, una tarjeta de red Wi-Fi por USB como la Blueway alcanza 2W de potencia y dispone de una antena de 15 dB.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2869%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2869%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h2 id="5-tarjeta-de-sonido">5. Tarjeta de sonido</h2>
+<p>Dispositivo que permite la reproducción , grabación y digitalización del sonido , normalmente a través de software específico. Las placas base actuales normalmente disponen del sistema de sonido integrado y suelen ser de calidad, así que es poco usual ampliar con tarjetas de expansión de sonido.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%289%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%289%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Normalmente la encontramos ncorporada e la placa base. Se añade una tarjeta de sonido si se necesita un uso profesional (músicos, compositores ...)</p>
+<ul>
+<li>
+<p>Combinado con un software específico, permite la reproducción, grabación y digitalización del sonido</p>
+</li>
+<li>
+<p>Actualmente encontramos conexiones PCI-e 1x, PCI y USB</p>
+</li>
+</ul>
+<h3 id="51-canales-y-polifonia">5.1. Canales y polifonia</h3>
+<h3 id="multicanal">Multicanal</h3>
+<p>Se denomina audio multicana l o sonido multicanal al uso de múltiples pistas de audio para reconstruir el sonido en un sistema de múltiples altavoces o de sonido envolvente. No debe confundirse el sonido multicanal con altavoces de 2 vías o 3 vías (altavoces), puestos que estos últimos utilizan un solo canal de audio por altavoz aunque utilicen varios altavoces para reproducirlo según la frecuencia. Para definir las distintas configuraciones de altavoces utilizadas, se usan dos dígitos separados por un punto decimal (2.1, 3.0, 5.1, 6.1, 7.1, etc.), dependiendo de la cantidad de pistas de audio que se utilicen.</p>
+<ul>
+<li>El</li>
+</ul>
+<p><strong>primer dígito</strong></p>
+<p>muestra el número de canales primarios o completos, cada uno de ellos reproducido en un altavoz individual</p>
+<ul>
+<li>El</li>
+</ul>
+<p><strong>segundo dígito</strong></p>
+<p>se refiere a la presencia de un canal para efectos de baja frecuencia (abreviado, LFE, por sus siglas en inglés) que se reproduce en un altavoz de subgraves.</p>
+<p>Así:</p>
+<ul>
+<li>
+<p>1.0 corresponde al sonido mono (que significa un solo canal).</p>
+</li>
+<li>
+<p>2.0 corresponde al sonido estéreo</p>
+</li>
+<li>
+<p>2.1 corresponde al sonido estéreo con un canal adicional para efectos de baja frecuencia.</p>
+</li>
+</ul>
+<p>Normalmente se denomina audio o sonido multicanal a partir de una configuración de 3 canales (2.1 o 3.0).</p>
+<p>Las conguraciones multicanal habituales son:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%2810%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%2810%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>En cuanto a la distribución sonora , los sonidos que se emiten por los distintos canales suelen ser de diferente rango para crear una sensación de sonido envolvente. Los rangos utilizados por cada canal suelen ser los siguientes:</p>
+<ul>
+<li>
+<p>Los canales frontales izquierdo y derecho utilizan rango completo, emitiendo sonidos de todo tipo, a excepción de los bajos.</p>
+</li>
+<li>
+<p>El canal frontal central suele ser para rangos medios, emitiendo sonidos medios o de voz.</p>
+</li>
+<li>
+<p>Los canales laterales y traseros se utilizan para sonidos de ambientación.</p>
+</li>
+<li>
+<p>El canal de subgraves se utiliza para los sonidos graves con frecuencias de hasta 100 Hz aproximadamente.</p>
+</li>
+</ul>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2870%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2870%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>En la actualidad se utilizan las tarjetas de sonido envolvente (surround), principalmente Dolby Digital 8.1 o superior.</p>
+<h3 id="52-operaciones-basicas">5.2. Operaciones básicas</h3>
+<h5 id="operaciones-basicas">Operaciones Básicas</h5>
+<p>Grabación : el sonido se recoge normalmente a través de un micrófono y llega a la tarjeta a través de los conectores. Esta señal se recoge, se procesa y se almacena en el formato seleccionado. Reproducción : la señal digitalizada de un sonido se envía a la tarjeta que la procesa y la manda a través de los conectores de salida hacia los altavoces, auriculares, etc. Síntesis : procedimiento mediante el que las tarjetas reproducen sonidos a partir de datos o representaciones simbólicas, como pueden ser los códigos MIDI.</p>
+<ul>
+<li><strong>Síntesis FM</strong></li>
+</ul>
+<p>: imita el sonido de un instrumento musical manipulando la onda, su amplitud y frecuencia</p>
+<ul>
+<li>S</li>
+</ul>
+<p><strong>íntesis por Tabla de Onda (WaveTable)</strong></p>
+<p>: la tarjeta de sonido alberga en la memoria una colección completa de notas de instrumentos en forma de secuencias sonoras reales muy cortas previamente digitalizadas. Cuando el archivo sonoro se va reproduciendo, la tarjeta busca en la tabla y escoge el sonido que corresponde a cada caso.</p>
+<ul>
+<li><strong>Síntesis de Modelado Físico</strong></li>
+</ul>
+<p>: se simula el sonido de un instrumento musical mediante el cálculo numérico de las ondas de sonido (se tienen en cuenta parámetros como la vibración del sonido en un tubo, una cuerda, una membrana en percusión, etc).</p>
+<h3 id="midi-music-instrument-digital-interface">MIDI (Music Instrument Digital Interface)</h3>
+<p>Estándar industrial adoptado por la industria musical y el mundo informático que regula la forma en que se conectan instrumentos y ordenadores, a través de qué cables y el formato de los mensajes que se intercambian. MIDI permite a los instrumentos electrónicos musicales comunicarse bidireccionalmente con el ordenador. Los códigos MIDI no transmiten música, sino órdenes musicales. Un mensaje MIDI consta de un byte de estado seguido de un cero o más bytes de datos; cada mensaje corresponde a un evento musical del tipo de la pulsación de una tecla o un pedal, el giro o desplazamiento de un control, etc. A cada instrumento musical se le asigna asigna un código MIDI de un total de 128 disponibles.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/image.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/image.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h3 id="53-componentes">5.3. Componentes</h3>
+<p>Los elementos que componen una tarjeta de sonido son los siguientes:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%2811%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%2811%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h5 id="mezclador">Mezclador</h5>
+<p>Se encarga de mezclar los distintos tipos de sonido que le llegan o que envía al exterior. Puede emitir sonido sintetizado y reproducido a la vez. Normalmente se controla por software.</p>
+<h5 id="adc-analog-to-digital-converter">ADC (Analog to Digital Converter)</h5>
+<p>Se encarga del proceso de convertir una señal de ondas analógica en su equivalente digital (denominado modulación digital). Para ello se captura el sonido almacenando en los valores de amplitud de una onda a intervalos regulares de tiempo. La amplitudde la onda de sonido determina su volumen, la frecuencia determina su escala (en el rango más grave o más aguda).</p>
+<h5 id="dac-digital-to-analog-converter">DAC (Digital to Analog Converter)</h5>
+<p>Realiza la demodulación digital, permitiendo reproducir el sonido tras convertir las señales digitales en analógicas.</p>
+<h5 id="dsp-digital-signal-processor">DSP (Digital Signal Processor)</h5>
+<p>Pequeño microprocesador que efectúa los cálculos necesarios para gestionar el sonido, con tareas como la compresión y la descompresión de su señal. También realiza otras tareas como producir efectos de sonido, ecos, reverberaciones, coros, etc, empleando para ellos varios tipos de algoritmos.</p>
+<h5 id="buffer">Búffer</h5>
+<p>Pequeña memoria que almacena temporalmente los datos que se envían entre ordenador y tarjeta. Permite una gestión de ajustes de tiempo.</p>
+<p>Además de los sintetizadores FM y por tablas de ondas que permiten la genearción de sonidos a partir de frecuencias y ondas.</p>
+<h5 id="interfaz-con-la-placa-madre">Interfaz con la placa madre</h5>
+<p>Permite transmitir información entre tarjeta y ordenador. En la actualidad es a través del PCI.</p>
+<h3 id="54-salidas">5.4. Salidas</h3>
+<p>Las salidas de una tarjeta de sonido son las siguiente:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%2812%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%2812%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Código de colores : hay que consultar el manual pero generalmente son:</p>
+<ul>
+<li><strong>Rosa</strong></li>
+</ul>
+<p>: Entrada analógica micrófono</p>
+<ul>
+<li><strong>Azul</strong></li>
+</ul>
+<p>: Entrada analógica de línea</p>
+<ul>
+<li><strong>Verde</strong></li>
+</ul>
+<p>: Salida analógica altavoces frontales</p>
+<ul>
+<li><strong>Negro</strong></li>
+</ul>
+<p>: Salida analógica altavoces traseros</p>
+<ul>
+<li><strong>Plateado</strong></li>
+</ul>
+<p>: Salida analógica altavoces laterales</p>
+<ul>
+<li><strong>Naranja</strong></li>
+</ul>
+<p>: Salida subwoofer o S / PDIF</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2871%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2871%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h4 id="spidf">S/PIDF</h4>
+<p>Formato de Interfaz digital y Analógica Sony/Phillips</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2872%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2872%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Dos posibilidades:</p>
+<p>Analógica. Cabla Coaxial. Conectores RCA</p>
+<p>Digital: Fibra óptica. Conector Toslink:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2873%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2873%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>0</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2874%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2874%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>S/PDIF Digial</p>
+<h2 id="6-tarjetas-de-interfaz">6. Tarjetas de interfaz</h2>
+<p>En este tipo se engloban todas las tarjetas que se dedican a ampliar las interfaces de nuestro sistema.</p>
+<p>Hay tarjetas</p>
+<ul>
+<li>
+<p>ATA, Bluetooth</p>
+</li>
+<li>
+<p>FireWire</p>
+</li>
+<li>
+<p>IDE</p>
+</li>
+<li>
+<p>RAID</p>
+</li>
+<li>
+<p>SCSI</p>
+</li>
+<li>
+<p>SATA</p>
+</li>
+<li>
+<p>Thunderbolt</p>
+</li>
+<li>
+<p>USB.</p>
+</li>
+</ul>
+<p>Es decir, añaden o complementan las que ya aporta de por sí nuestra propia placa base.</p>
+<p>Ejemplo tarjeta puerto IDE</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%2813%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%2813%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Tarjeta puertos USB</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2875%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2875%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Tarjetas eSATA</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2876%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2876%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Tarjetas SATA</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2877%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2877%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Tarjeta FireWitre:</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2878%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2878%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<p>Por ejemplo, si queremos crear un RAID 5 pero la controladora de RAID de nuestra placa no admite ese tipo de RAID, deberemos de comprar una de estas tarjetas. De hecho, las placas base para los procesadores AMD Ryzen y Threadripper no permiten crear RAID 5 con su controladora integrada.</p>
+<figure align="center">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../imgs/expansion/imagen%20%2879%29.png" data-desc-position="bottom"><img alt="Imagen" src="../imgs/expansion/imagen%20%2879%29.png" width="85%"></a>
+  <figcaption>Imagen</figcaption>
+</figure>
+<h2 id="7-tarjetas-capturadoras-de-video">7. Tarjetas capturadoras de vídeo</h2>
+<p>Este tipo de tarjetas, cuando se conectan de manera interna en un PC, también se consideran tarjetas de expansión. Dado que se conectan a través de un puerto PCIe (o PCI, en el caso de las más antiguas).</p>
+<p>Gracias a ellas, muchos de nosotros hemos podido ver la televisión directamente en nuestro ordenador. Sin embargo, para ese tipo de uso, hace tiempo que ya no se utilizan. No al menos como antiguamente.</p>
+<p>Pero las tarjetas que se utilizan para hacer streaming y grabar partidas, son la nueva moda entre los usuarios gamers.</p>
+<p>Existen capturadorsas te permiten grabar vídeo en 4K a 60 FPS en tu ordenador de el mismo o de otras consolas. La mayoría de capturadoras cuentan con un software que nos permite editar fácilmente lo que queremos subir posteriormente en YouTube y que tiende a ser muy sencillo de usar. En este caso no hemos podido hacer una amplia lista de capturadoras ya que el mercado actual de capturadoras 4K no está muy poblado.</p>
+<p>Enlace: Las mejores capturadoras 4K del mercado que podemos encontrar en Amazon</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Sergio Rey Martínez - DAM - SI - 2025
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer", "navigation.instant", "navigation.instant.progress", "toc.follow", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

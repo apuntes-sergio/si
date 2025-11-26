@@ -1,0 +1,102 @@
+# mkdocs.yml
+# Configuración de MkDocs para el sitio de Apuntes Sistemas Informáticos - DAM
+site_name: Apuntes Sistemas Informáticos - DAM
+site_url: https://sergio-apuntes.github.io/si/
+site_author: Sergio Rey Martínez
+
+copyright: Sergio Rey Martínez - DAM - SI - 2025
+
+theme:
+  name: material
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.indexes
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.follow
+    - navigation.top              # Muestra el botón para volver al principio
+    - content.code.copy           # Botón de copiar en bloques de código
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  # los siguientes son para los bloques de código
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Tabs para códigos de dos lenguajes o más
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true  
+
+
+
+plugins:
+  - search
+  - glightbox
+
+
+nav:
+  - Presentación: 
+    - index.md
+
+  - Introducción a los Sistemas Operativos de Servidor:
+    - 01_1_introducción.md
+    - 01_2_arquitectura_cliente_servidor.md
+    - 01_3_funciones_SO.md
+    - 01_4_sistemas_operativos_servidor.md
+    - 01_5_recordatorio_red.md
+  - Instalación de sistemas operativos de servidor privativos:
+    - 02_1_instalacion_SO_introduccion.md
+    - 02_2_instalacion_windows_server.md
+    - 02_3_config_basica.md
+    - 02_4_documentar_instalacion.md
+    - 02_5_administrar_discos.md
+    - 02_6_dominio.md
+  - Administración de usuarios y grupos en Windows Server:
+    - 03_01_objetos_dominios.md
+    - 03_02_usuarios.md
+    - 03_03_grupos.md
+    - 03_04_equipos.md
+    - 03_05_unidades_organizativas.md
+    - 03_06_herramientas_administracion.md
+    - 03_07_perfiles_usuarios.md
+  - Gestión de recursos compartidos en Windows Server:
+    - 04_01_permisos_derechos.md
+    - 04_02_servidor_archivos.md
+    - 04_03_compartir_impresoras.md
+  - Directivas de grupo en Windows Server:
+    - 05_01_introduccion_directivas.md
+    - 05_02_creacion_directivas.md
+    - 05_03_herencia_directivas.md
+    - 05_04_configuacion_directivas_comunes.md
+    - 05_05_verificacion_problemas.md
+

@@ -1,9 +1,6 @@
-# mkdocs.yml
-# Configuración de MkDocs para el sitio de Apuntes Sistemas Informáticos - DAM
 site_name: Apuntes Sistemas Informáticos - DAM
 site_url: https://sergio-apuntes.github.io/si/
 site_author: Sergio Rey Martínez
-
 copyright: Sergio Rey Martínez - DAM - SI - 2025
 
 theme:
@@ -27,47 +24,38 @@ theme:
   features:
     - navigation.indexes
     - navigation.footer
-    - navigation.instant
-    - navigation.instant.progress
+    - navigation.instant          # DESACTIVADO TEMPORALMENTE PARA PRUEBAS
+    - navigation.instant.progress # DESACTIVADO TEMPORALMENTE PARA PRUEBAS
     - toc.follow
-    - navigation.top              # Muestra el botón para volver al principio
-    - content.code.copy           # Botón de copiar en bloques de código
+    - navigation.top
+    - content.code.copy
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
-  - attr_list
-  - md_in_html
-  # los siguientes son para los bloques de código
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  # Tabs para códigos de dos lenguajes o más
-  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.tabbed:
-      alternate_style: true  
-
-
+      alternate_style: true
 
 plugins:
   - search
   - glightbox
 
-
 nav:
-  - Presentación: 
-    - index.md
-
+  - Presentación: index.md
   - Introducción a los Sistemas Operativos de Servidor:
     - 01_1_introducción.md
     - 01_2_arquitectura_cliente_servidor.md
@@ -99,4 +87,3 @@ nav:
     - 05_03_herencia_directivas.md
     - 05_04_configuacion_directivas_comunes.md
     - 05_05_verificacion_problemas.md
-

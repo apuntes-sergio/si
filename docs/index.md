@@ -3,6 +3,8 @@ title: Introducción al curso
 description: Introducción a los Sistemas Informáticos
 ---
 
+KKKK
+
 Apuntes del módulo de **SI** (Sistemes Informáticos) para el ciclo formativo de grado medio de **DAM** (Desarrollo de Aplicaciones Multimedias)
 
 <!-- <figure markdown="span" align="center">
@@ -26,3 +28,7 @@ Apuntes desarrollados por ***Sergio Rey Martínez***
 
 _Licenciado bajo la [Licencia Creative Commons Atribución Compartir Igual 4.0](http://creativecommons.org/licenses/by-sa/4.0/)_
 
+hola 3
+hola
+hola
+hola

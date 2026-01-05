@@ -11,8 +11,6 @@ Apuntes del módulo de **SI** (Sistemes Informáticos) para el ciclo formativo d
 
 En este espacio encontrarás los apuntes básicos sobre el módulo, que constará de los siguiente Bloques y Unidades Didácticas:
 
-1. Instalación de Sistemas Operativos libres y privativos
-
 El bloque está compuesto por las siguientes unidades didácticas:
 
  - Introducción a los Sistemas Operativos servidor y diseño de sistemas.

@@ -100,3 +100,12 @@ nav:
     - 06_10_supervision_monitorizacion.md
     - 06_11_servicios.md
     - 06_12_actualizacion_despliegue.md  
+
+  - Fundamentos de la Línea de Comandos en Linux:
+    - 10_01_introducciom.md
+    - 10_02_conceptos_basicos.md
+    - 10_03_comprendiendo_almacenamiento.md
+    - 10_04_rutas_absolutas_relativas.md
+    - 10_05_linea_comandos_linux.md
+    - 10_06_comandos_basicos_alias.md
+    - 10_07_gestion_directorios.md

@@ -10,7 +10,7 @@ Cuando ejecutamos un comando, normalmente actúa sobre archivos o directorios. P
 !!! info "Importante"
     Si no especificamos una ruta, el sistema asume que el archivo o directorio está en el **directorio actual**.
 
-## Tipos de Rutas
+**Tipos de Rutas**
 
 Existen dos formas de especificar la ubicación de un archivo o directorio:
 
@@ -69,9 +69,9 @@ Para facilitar el uso de rutas relativas, existen símbolos especiales:
 | `..` | Directorio padre (anterior) | `../carpeta/` |
 | `~` | Directorio personal del usuario (solo Linux) | `~/Documentos/` |
 
-!!! tip "Tilde en Linux"
+!!! tip "Virgulilla (~) en Linux"
     - En el terminal: ++"alt-gr"++++"Ñ"++
-    - En un editor: ++alt++++"126"++
+    - En un editor (Windows): ++alt++++"126"++
 
 ## Ejemplo Práctico
 
@@ -106,6 +106,7 @@ Si estamos en `C:\pruebas\asix\alumnos`:
     copy *.* ..\..\dam\alumnos
     ```
     **Explicación del recorrido:**
+
     - Estamos en: `C:\pruebas\asix\alumnos`
     - Primer `..` → `C:\pruebas\asix`
     - Segundo `..` → `C:\pruebas`
@@ -185,6 +186,7 @@ copy archivo.txt ..\..\dam\herramientas
 ```
 
 **Recorrido:**
+
 1. `..` → Subo a `smx`
 2. `..` → Subo a `pruebas`
 3. `dam\herramientas` → Bajo a dam y luego a herramientas

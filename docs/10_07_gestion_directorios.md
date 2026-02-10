@@ -3,8 +3,6 @@ title: Gestión de Directorios
 description:  Fundamentos de la Línea de Comandos en Linux
 ---
 
-## Introducción
-
 Los directorios (o carpetas) son la base de la organización de archivos en cualquier sistema operativo. En Linux, saber navegar y gestionar directorios desde la terminal es fundamental.
 
 ## Comandos Principales
@@ -31,13 +29,13 @@ pwd
 
 Lista los archivos y directorios del directorio especificado (o del actual si no se indica ninguno).
 
-#### Sintaxis básica
+Sintaxis básica: 
 
 ```bash
 ls [opciones] [directorio]
 ```
 
-#### Uso básico
+Uso básico: 
 
 ```bash
 ls                          # Lista el contenido del directorio actual
@@ -45,7 +43,7 @@ ls /home/juan              # Lista el contenido de /home/juan
 ls ..                      # Lista el contenido del directorio padre
 ```
 
-#### Opciones principales
+Opciones principales: 
 
 | Opción | Descripción | Ejemplo |
 |--------|-------------|---------|
@@ -58,7 +56,7 @@ ls ..                      # Lista el contenido del directorio padre
 | `-S` | Ordena por tamaño | `ls -lS` |
 | `-r` | Invierte el orden | `ls -lr` |
 
-#### Ejemplos prácticos
+Ejemplos prácticos: 
 
 === "Listado básico"
     ```bash
@@ -100,7 +98,7 @@ ls ..                      # Lista el contenido del directorio padre
     drwxr-xr-x  5 sergio sergio 4096 feb  5 10:30 Documentos
     ```
 
-#### Combinando opciones
+Combinando opciones: 
 
 ```bash
 ls -lah                    # Lista con detalles, tamaños legibles y ocultos
@@ -123,13 +121,13 @@ ls -lS                     # Lista con detalles, ordenado por tamaño
 
 **Change Directory** - Cambia el directorio actual al que le indiquemos.
 
-#### Sintaxis
+Sintaxis: 
 
 ```bash
 cd [directorio]
 ```
 
-#### Formas de uso
+Formas de uso: 
 
 ```bash
 cd /home/juan/Desktop/pruebas    # Ruta absoluta
@@ -141,7 +139,7 @@ cd                                # Sin parámetros también va al home
 cd -                              # Vuelve al directorio anterior
 ```
 
-#### Ejemplos prácticos
+Ejemplos prácticos: 
 
 === "Navegación básica"
     ```bash
@@ -184,13 +182,13 @@ cd -                              # Vuelve al directorio anterior
 
 **Make Directory** - Crea uno o más directorios nuevos.
 
-#### Sintaxis
+Sintaxis: 
 
 ```bash
 mkdir [opciones] nombre_directorio
 ```
 
-#### Opciones principales
+Opciones principales: 
 
 | Opción | Descripción |
 |--------|-------------|
@@ -198,7 +196,7 @@ mkdir [opciones] nombre_directorio
 | `-v` | Modo verbose (muestra lo que hace) |
 | `-m` | Establece permisos específicos |
 
-#### Ejemplos básicos
+Ejemplos básicos
 
 ```bash
 mkdir clientes                          # Crea "clientes" en el directorio actual
@@ -206,47 +204,47 @@ mkdir /home/juan/clientes              # Crea "clientes" en /home/juan
 mkdir ../clientes                      # Crea "clientes" en el directorio padre
 ```
 
-#### Crear múltiples directorios
+!!!example "Crear múltiples directorios"
 
-```bash
-mkdir dir1 dir2 dir3                   # Crea tres directorios
-mkdir Proyecto{1,2,3}                  # Crea Proyecto1, Proyecto2, Proyecto3
-```
+    ```bash
+    mkdir dir1 dir2 dir3                   # Crea tres directorios
+    mkdir Proyecto{1,2,3}                  # Crea Proyecto1, Proyecto2, Proyecto3
+    ```
 
-#### Crear estructura de directorios
+!!!example "Crear estructura de directorios"
 
-Sin la opción `-p`, si intentamos crear un directorio dentro de otro que no existe, dará error:
+    Sin la opción `-p`, si intentamos crear un directorio dentro de otro que no existe, dará error:
 
-```bash
-mkdir proyectos/web/html               # ❌ Error si 'proyectos/web' no existe
-```
+    ```bash
+    mkdir proyectos/web/html               # ❌ Error si 'proyectos/web' no existe
+    ```
 
-Con `-p` crea toda la estructura:
+    Con `-p` crea toda la estructura:
 
-```bash
-mkdir -p proyectos/web/html            # ✅ Crea proyectos, web y html
-mkdir -p Documentos/2026/Enero/Facturas
-```
+    ```bash
+    mkdir -p proyectos/web/html            # ✅ Crea proyectos, web y html
+    mkdir -p Documentos/2026/Enero/Facturas
+    ```
 
-#### Crear con permisos específicos
+!!!example "Crear con permisos específicos"
 
-```bash
-mkdir -m 755 carpeta_publica           # Crea con permisos específicos
-mkdir -m 700 carpeta_privada           # Solo el propietario puede acceder
-```
+    ```bash
+    mkdir -m 755 carpeta_publica           # Crea con permisos específicos
+    mkdir -m 700 carpeta_privada           # Solo el propietario puede acceder
+    ```
 
-#### Modo verbose
+!!!example "Modo verbose"
 
-```bash
-mkdir -pv proyecto/src/css proyecto/src/js
-```
-**Salida:**
-```
-mkdir: se ha creado el directorio 'proyecto'
-mkdir: se ha creado el directorio 'proyecto/src'
-mkdir: se ha creado el directorio 'proyecto/src/css'
-mkdir: se ha creado el directorio 'proyecto/src/js'
-```
+    ```bash
+    mkdir -pv proyecto/src/css proyecto/src/js
+    ```
+    **Salida:**
+    ```
+    mkdir: se ha creado el directorio 'proyecto'
+    mkdir: se ha creado el directorio 'proyecto/src'
+    mkdir: se ha creado el directorio 'proyecto/src/css'
+    mkdir: se ha creado el directorio 'proyecto/src/js'
+    ```
 
 ---
 
@@ -254,13 +252,13 @@ mkdir: se ha creado el directorio 'proyecto/src/js'
 
 **Remove Directory** - Elimina directorios **que estén vacíos**.
 
-#### Sintaxis
+Sintaxis
 
 ```bash
 rmdir [opciones] nombre_directorio
 ```
 
-#### Ejemplos
+Ejemplos
 
 ```bash
 rmdir clientes                         # Elimina "clientes" del directorio actual
@@ -274,24 +272,24 @@ rmdir dir1 dir2 dir3                  # Elimina múltiples directorios
     rmdir: no se puede borrar 'clientes': El directorio no está vacío
     ```
 
-#### Eliminar estructura vacía
+!!!example "Eliminar estructura vacía"
 
-```bash
-rmdir -p proyecto/src/css              # Elimina css, luego src, luego proyecto
-                                       # (solo si todos están vacíos)
-```
+    ```bash
+    rmdir -p proyecto/src/css              # Elimina css, luego src, luego proyecto
+                                        # (solo si todos están vacíos)
+    ```
 
 ---
 
-### `rm -r` - Eliminar directorios con contenido
+!!!example "`rm -r` - Eliminar directorios con contenido"
 
-Para eliminar directorios que contienen archivos, usamos `rm` con la opción `-r` (recursivo).
+    Para eliminar directorios que contienen archivos, usamos `rm` con la opción `-r` (recursivo).
 
-```bash
-rm -r clientes                         # Elimina "clientes" y todo su contenido
-rm -rf clientes                        # Fuerza la eliminación sin preguntar
-rm -ri clientes                        # Pregunta antes de cada eliminación
-```
+    ```bash
+    rm -r clientes                         # Elimina "clientes" y todo su contenido
+    rm -rf clientes                        # Fuerza la eliminación sin preguntar
+    rm -ri clientes                        # Pregunta antes de cada eliminación
+    ```
 
 !!! danger "¡Peligro!"
     El comando `rm -rf` es **extremadamente peligroso** si se usa incorrectamente. No pide confirmación y borra todo sin posibilidad de recuperación.
@@ -302,7 +300,7 @@ rm -ri clientes                        # Pregunta antes de cada eliminación
     rm -rf /*                          # ¡NUNCA! Igual de peligroso
     ```
 
-#### Opciones de rm
+Opciones de `rm`:
 
 | Opción | Descripción |
 |--------|-------------|
@@ -335,67 +333,67 @@ sudo blkid
 
 ## Ejemplos Prácticos Completos
 
-### Escenario 1: Organizar proyecto
+!!!example "Escenario 1: Organizar proyecto"
 
-```bash
-# Ver dónde estamos
-pwd
+    ```bash
+    # Ver dónde estamos
+    pwd
 
-# Ir al directorio personal
-cd ~
+    # Ir al directorio personal
+    cd ~
 
-# Crear estructura de proyecto
-mkdir -p MiProyecto/{src,docs,tests}
-mkdir -p MiProyecto/src/{css,js,images}
+    # Crear estructura de proyecto
+    mkdir -p MiProyecto/{src,docs,tests}
+    mkdir -p MiProyecto/src/{css,js,images}
 
-# Ver la estructura creada
-ls -R MiProyecto
+    # Ver la estructura creada
+    ls -R MiProyecto
 
-# Entrar al proyecto
-cd MiProyecto
-```
+    # Entrar al proyecto
+    cd MiProyecto
+    ```
 
-### Escenario 2: Navegar por el sistema
+!!!example "Escenario 2: Navegar por el sistema"
 
-```bash
-# Estamos en home
-pwd                           # /home/sergio
+    ```bash
+    # Estamos en home
+    pwd                           # /home/sergio
 
-# Ver qué hay
-ls -lh
+    # Ver qué hay
+    ls -lh
 
-# Ir a documentos
-cd Documentos
+    # Ir a documentos
+    cd Documentos
 
-# Subir un nivel y ver contenido
-cd ..
-ls
+    # Subir un nivel y ver contenido
+    cd ..
+    ls
 
-# Ir a una ruta absoluta
-cd /var/log
+    # Ir a una ruta absoluta
+    cd /var/log
 
-# Ver logs
-ls -lth | head -10           # Los 10 archivos más recientes
+    # Ver logs
+    ls -lth | head -10           # Los 10 archivos más recientes
 
-# Volver a home
-cd
-```
+    # Volver a home
+    cd
+    ```
 
-### Escenario 3: Limpieza de directorios
+!!!example "Escenario 3: Limpieza de directorios"
 
-```bash
-# Ver directorios vacíos
-ls -l
+    ```bash
+    # Ver directorios vacíos
+    ls -l
 
-# Eliminar directorio vacío
-rmdir directorio_vacio
+    # Eliminar directorio vacío
+    rmdir directorio_vacio
 
-# Eliminar directorio con contenido (con precaución)
-rm -ri directorio_con_archivos    # Pregunta antes de borrar
+    # Eliminar directorio con contenido (con precaución)
+    rm -ri directorio_con_archivos    # Pregunta antes de borrar
 
-# Eliminar múltiples directorios vacíos
-rmdir temp1 temp2 temp3
-```
+    # Eliminar múltiples directorios vacíos
+    rmdir temp1 temp2 temp3
+    ```
 
 ---
 

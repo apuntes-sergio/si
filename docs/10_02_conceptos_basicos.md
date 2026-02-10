@@ -7,9 +7,9 @@ description:  Fundamentos de la Línea de Comandos en Linux
 
 La **interfaz de línea de comandos** (CLI) es una pantalla donde el usuario se comunica con el ordenador escribiendo comandos. Aunque requiere memorizar comandos y su sintaxis, proporciona un control total sobre el sistema.
 
-### Sistemas operativos
+Por sistemas operativos tenemos: 
 
-- **Windows**: Usa el programa `cmd.exe` (Símbolo del sistema) para interpretar comandos de MS-DOS
+- **Windows**: Usa el programa `cmd.exe` (Símbolo del sistema) para interpretar comandos de MS-DOS o el programa `powershell.exe` para interpretar comandos PowerShell más avanzados y modernos.
 - **GNU/Linux**: Utiliza diferentes shells, siendo `bash` el más común
 
 ## El Shell
@@ -80,8 +80,6 @@ comando [opciones] [parámetros]
     - `mkdir` → comando para crear directorios
     - `prueba` → parámetro (nombre del directorio a crear)
 
-### Separación por espacios
-
 Los elementos de un comando se separan con **espacios en blanco**. El sistema interpreta cada espacio como separador entre comando, opciones y parámetros.
 
 ## Caracteres Comodines
@@ -93,33 +91,34 @@ Los **comodines** o **wildcards** permiten hacer referencia a múltiples archivo
 | `*` | Cero o más caracteres | `inf*.txt` | `inf.txt`, `informe.txt`, `informacion_junio.txt` |
 | `?` | Un único carácter | `ma?o.jpg` | `mano.jpg`, `mazo.jpg` (NO `marzo.jpg` ni `mao.jpg`) |
 
-### Ejemplos con el comando `copy` (Windows)
+Ejemplos con el comando `copy` (Windows): 
 
-```cmd
-copy inf*.txt C:\Users\sergi\prueba
-```
-Copia todos los archivos que empiezan por "inf" con extensión .txt
+!!! example "Copia todos los archivos que empiezan por "inf" con extensión .txt"
+    ```cmd
+    copy inf*.txt C:\Users\sergi\prueba
+    ```
 
-```cmd
-copy *_junio.doc C:\Users\sergi\prueba
-```
-Copia todos los archivos .doc que terminan en "_junio"
 
-```cmd
-copy *.* C:\Users\sergi\prueba
-```
-Copia todos los archivos (cualquier nombre y extensión)
+!!! example "Copia todos los archivos .doc que terminan en '_junio'"
+    ```cmd
+    copy *_junio.doc C:\Users\sergi\prueba
+    ```
 
-```cmd
-copy ma?o.jpg C:\Users\sergi
-```
-Copia archivos .jpg con patrón "ma + 1 carácter + o"
+!!! example "Copia todos los archivos (cualquier nombre y extensión)"
+    ```cmd
+    copy *.* C:\Users\sergi\prueba
+    ```
+
+!!! example "Copia archivos .jpg con patrón 'ma + 1 carácter + o'"
+    ```cmd
+    copy ma?o.jpg C:\Users\sergi
+    ```
 
 ## Scripts
 
 Un **script** es un archivo de texto que contiene una lista de comandos, uno por línea. Ejecutar el script equivale a escribir todos esos comandos uno tras otro.
 
-### Ventajas de los scripts
+Ventajas de los scripts: 
 
 - ✅ **Automatización**: Ejecuta tareas repetitivas con un solo comando
 - ✅ **Consistencia**: Siempre se ejecutan los mismos pasos
@@ -132,9 +131,10 @@ Un **script** es un archivo de texto que contiene una lista de comandos, uno por
     - Instalación y configuración automatizada
     - Procesamiento batch de archivos
 
-### Extensión de scripts
+Extensión de scripts:
 
-- **Windows**: `.bat` o `.cmd`
+- **Windows**: `.bat` o `.cmd` para archivos por lotes MS-DOS
+- **Windows**: `.ps1` para scripts en PowerShell
 - **GNU/Linux**: `.sh` (shell script)
 
 ```bash
@@ -145,16 +145,6 @@ cp -r /home/usuario/documentos /backup/
 echo "Copia completada"
 ```
 
-## Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **CLI** | Interfaz de texto para comunicarse con el SO |
-| **Shell** | Intérprete que ejecuta los comandos |
-| **Prompt** | Símbolo que indica que el sistema espera comandos |
-| **Comando** | Instrucción que le damos al sistema |
-| **Comodines** | Patrones para referirse a múltiples archivos (`*` y `?`) |
-| **Script** | Archivo con múltiples comandos para automatizar tareas |
 
 !!! tip "Consejos iniciales"
     - El **directorio actual** es importante: determina dónde se ejecutan los comandos

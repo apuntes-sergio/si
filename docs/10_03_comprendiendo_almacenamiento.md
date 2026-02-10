@@ -7,11 +7,11 @@ description:  Fundamentos de la Línea de Comandos en Linux
 
 Cada sistema operativo organiza sus unidades de almacenamiento de forma diferente. Comprender estas diferencias es fundamental para trabajar correctamente en cada sistema.
 
-## Windows: Sistema de Letras
+### Windows: Sistema de Letras
 
 Windows utiliza **letras** para identificar cada unidad de almacenamiento accesible en el sistema.
 
-### Letras comunes
+**Letras comunes**
 
 | Letra | Uso típico |
 |-------|------------|
@@ -26,17 +26,17 @@ Windows utiliza **letras** para identificar cada unidad de almacenamiento accesi
     E:\USB\fotos\
     ```
 
-### Características de Windows
+Características de Windows:
 
 - **Múltiples árboles**: Cada letra representa un árbol de directorios independiente
 - **Separador**: Utiliza la barra invertida `\` (++alt-gr++"tecla de superíndices"++)
 - **Raíz**: Cada unidad tiene su propia raíz (`C:\`, `D:\`, etc.)
 
-## Linux: Sistema de Árbol Único
+### Linux: Sistema de Árbol Único
 
 GNU/Linux utiliza un **único árbol de directorios** donde todas las unidades se integran en la misma estructura.
 
-### Características de Linux
+Características de Linux:
 
 - **Raíz única**: Todo el sistema cuelga de `/` (directorio raíz)
 - **Sin letras**: No necesita letras identificativas
@@ -50,7 +50,7 @@ GNU/Linux utiliza un **único árbol de directorios** donde todas las unidades s
     /mnt/disco_externo/backups/
     ```
 
-### Estructura básica del árbol de Linux
+Estructura básica del árbol de Linux:
 
 ```
 /                           (raíz del sistema)
@@ -65,7 +65,7 @@ GNU/Linux utiliza un **único árbol de directorios** donde todas las unidades s
 └── mnt/                    (punto de montaje manual)
 ```
 
-## Comparación Visual
+### Comparación Visual
 
 === "Windows"
     ```
@@ -91,7 +91,7 @@ GNU/Linux utiliza un **único árbol de directorios** donde todas las unidades s
     (Un único árbol)
     ```
 
-## Tabla Comparativa
+### Tabla Comparativa
 
 | Aspecto | Windows | Linux |
 |---------|---------|-------|
@@ -99,7 +99,7 @@ GNU/Linux utiliza un **único árbol de directorios** donde todas las unidades s
 | **Separador de rutas** | `\` (barra invertida) | `/` (barra normal) |
 | **Raíz** | Múltiples raíces | Una única raíz `/` |
 | **Dispositivos externos** | Letra automática | Montaje en `/media` o `/mnt` |
-| **Ejemplo de ruta** | `C:\Users\profesor\imagen.png` | `/home/profesor/Imágenes/imagen.png` |
+| **Ejemplo de ruta** | `C:\Users\profesor\imagen.png` | `/home/profesor/imágenes/imagen.png` |
 
 ## Ejemplo Práctico
 
@@ -137,6 +137,15 @@ En Linux, las unidades de almacenamiento se **montan** como directorios dentro d
 
 !!! info "Ventaja del sistema Linux"
     Al tener un único árbol, no importa dónde esté físicamente almacenado un archivo (en qué disco o partición). El usuario ve una estructura unificada y coherente.
+
+!!! warning "CUIDADO: Mayúsculas y minúsculas"
+
+    Mientras que *Windows* no es ***case-sensitive***, quiere decir que pondemos poner el nombre de una carpeta o fichero indistintamente en mayúsculas o minúsculas, *Linux* si es ***case-sensitive*** debemos indicar los nombres exactamente con las mayúsculas o minúsculas que tiene:
+
+    - Si archivo se llama `fichero.txt` (todo en minúsculas):
+
+        - En Windows es válido `Fichero.txt`, `fichero.txt`, `FICHERO.TXT`, `FiChErO.TxT`...
+        - En Linux solo es válido `fichero.txt` y por ejemplo `Fichero.txt` será otro fichero
 
 ## Resumen
 

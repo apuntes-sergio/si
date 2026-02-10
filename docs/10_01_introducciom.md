@@ -3,7 +3,7 @@ title: Introducción a la Interfaz de Línea de Comandos
 description:  Fundamentos de la Línea de Comandos en Linux
 ---
 
-## ¿Qué es una interfaz de usuario?
+## Interfaz de usuario
 
 Una de las funciones fundamentales del sistema operativo es actuar como **intermediario entre el usuario y el hardware** del equipo. Para facilitar esta comunicación, el sistema operativo proporciona una **interfaz de usuario**, que es el medio a través del cual interactuamos con el ordenador.
 

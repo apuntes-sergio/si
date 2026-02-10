@@ -3,9 +3,7 @@ title: Comandos Básicos y Alias
 description:  Fundamentos de la Línea de Comandos en Linux
 ---
 
-## ¿Qué es un Comando?
-
-Un comando puede ser una de estas **cuatro cosas**:
+Un **comando** puede ser una de estas **cuatro cosas**:
 
 | Tipo | Descripción | Ejemplo |
 |------|-------------|---------|
@@ -60,14 +58,14 @@ which firefox
 
 Los **alias** son comandos personalizados que funcionan como atajos para ejecutar otros comandos (generalmente más complejos o largos).
 
-### ¿Por qué usar alias?
+Por qué usar alias: 
 
 - ⚡ **Rapidez**: Escribe menos para hacer más
 - 🎯 **Comodidad**: Comandos frecuentes en una sola palabra
 - 🛡️ **Seguridad**: Añade confirmaciones a comandos peligrosos
 - 🎨 **Personalización**: Adapta el sistema a tu forma de trabajar
 
-### Ver los alias existentes
+Para ver los alias existentes
 
 ```bash
 alias
@@ -83,16 +81,16 @@ alias cp='cp -i'
 alias mv='mv -i'
 ```
 
-### Ver un alias específico
+Para ver un alias específico
 
 ```bash
 alias ll
 ```
 **Salida:** `alias ll='ls -alF'`
 
-## Crear Alias
+### Crear Alias
 
-### Sintaxis
+Sintaxis: 
 
 ```bash
 alias nombreAlias='comandos_a_ejecutar'
@@ -102,51 +100,49 @@ alias nombreAlias='comandos_a_ejecutar'
     - No debe haber espacios alrededor del `=`
     - Si el comando tiene espacios, debe ir entre comillas simples
 
-### Ejemplos prácticos
+Ejemplos prácticos:
 
-#### Ejemplo 1: Listar con detalles
+!!! example "Ejemplo 1: Listar con detalles"
 
-```bash
-alias ll='ls -lh'
-```
+    ```bash
+    alias ll='ls -lh'
+    ```
 
 Ahora al escribir `ll` ejecutará `ls -lh` (lista con detalles y tamaños legibles)
 
-#### Ejemplo 2: Ir al directorio de proyectos
+!!! example "Ejemplo 2: Ir al directorio de proyectos"
 
-```bash
-alias proyectos='cd /home/sergio/Documentos/Proyectos'
-```
+    ```bash
+    alias proyectos='cd /home/sergio/Documentos/Proyectos'
+    ```
 
-#### Ejemplo 3: Actualizar el sistema
+!!! example "Ejemplo 3: Actualizar el sistema"
 
-```bash
-alias actualizar='sudo apt update && sudo apt upgrade -y'
-```
+    ```bash
+    alias actualizar='sudo apt update && sudo apt upgrade -y'
+    ```
 
-#### Ejemplo 4: Comando de seguridad
+!!! example "Ejemplo 4: Comando de seguridad"
 
-```bash
-alias rm='rm -i'
-```
+    ```bash
+    alias rm='rm -i'
+    ```
 
 Ahora `rm` siempre pedirá confirmación antes de borrar (opción `-i` = interactive)
 
-#### Ejemplo 5: Conectar a un servidor
+!!! example "Ejemplo 5: Conectar a un servidor"
 
-```bash
-alias servidor='ssh usuario@192.168.1.100'
-```
+    ```bash
+    alias servidor='ssh usuario@192.168.1.100'
+    ```
 
-#### Ejemplo 6: Ver procesos ordenados por CPU
+!!! example "Ejemplo 6: Ver procesos ordenados por CPU"
 
-```bash
-alias pscpu='ps aux --sort=-%cpu | head -n 10'
-```
+    ```bash
+    alias pscpu='ps aux --sort=-%cpu | head -n 10'
+    ```
 
-### Probar un alias
-
-Una vez creado, simplemente escribe su nombre:
+Para probar un alias, una vez creado, simplemente escribe su nombre:
 
 ```bash
 sergio@ubuntu:~$ ll
@@ -157,9 +153,7 @@ drwxr-xr-x  2 sergio sergio 4,0K feb  3 14:20 Documentos/
 drwxr-xr-x  2 sergio sergio 4,0K feb  4 16:45 Descargas/
 ```
 
-## Alias Temporales vs Permanentes
-
-### Alias Temporales
+### Alias Temporales vs Permanentes
 
 Los alias creados con el comando `alias` son **temporales**: se pierden al cerrar la terminal o reiniciar el sistema.
 
@@ -167,57 +161,53 @@ Los alias creados con el comando `alias` son **temporales**: se pierden al cerra
 alias temp='echo "Este alias es temporal"'
 ```
 
-### Alias Permanentes
-
 Para que un alias sea **permanente**, debemos añadirlo al archivo de configuración del shell: `~/.bashrc`
 
-#### Pasos para crear un alias permanente
+!!!tip "Pasos para crear un alias permanente"
 
-**1. Abrir el archivo de configuración:**
+    **1. Abrir el archivo de configuración:**
 
-```bash
-nano ~/.bashrc
-```
+    ```bash
+    nano ~/.bashrc
+    ```
 
-**2. Ir al final del archivo y añadir el alias:**
+    **2. Ir al final del archivo y añadir el alias:**
 
-```bash
-# Mis alias personalizados
-alias ll='ls -lh'
-alias actualizar='sudo apt update && sudo apt upgrade -y'
-alias proyectos='cd /home/sergio/Documentos/Proyectos'
-```
+    ```bash
+    # Mis alias personalizados
+    alias ll='ls -lh'
+    alias actualizar='sudo apt update && sudo apt upgrade -y'
+    alias proyectos='cd /home/sergio/Documentos/Proyectos'
+    ```
 
-**3. Guardar el archivo:**
-- ++ctrl++"O"++ (guardar)
-- ++enter++ (confirmar)
-- ++ctrl++"X"++ (salir)
+    **3. Guardar el archivo:**
+    - ++ctrl++"O"++ (guardar)
+    - ++enter++ (confirmar)
+    - ++ctrl++"X"++ (salir)
 
-**4. Recargar la configuración:**
+    **4. Recargar la configuración:**
 
-```bash
-source ~/.bashrc
-```
+    ```bash
+    source ~/.bashrc
+    ```
 
-!!! tip "¿Qué es .bashrc?"
+!!! note "¿Qué es .bashrc?"
     El archivo `~/.bashrc` se ejecuta automáticamente cada vez que abres una terminal. Todo lo que escribas ahí (alias, variables, funciones) estará disponible en todas tus sesiones.
 
-## Eliminar un Alias
+### Eliminar un Alias
 
-### Temporalmente (sesión actual)
+Temporalmente (sesión actual)
 
 ```bash
 unalias nombreAlias
 ```
 
-Ejemplo:
-```bash
-unalias ll
-```
+!!! example "Ejemplo eliminar alias `ll`"
+    ```bash
+    unalias ll
+    ```
 
-### Permanentemente
-
-Edita el archivo `~/.bashrc` y elimina o comenta (con `#`) la línea del alias:
+Para eliminar de forma permanente, edita el archivo `~/.bashrc` y elimina o comenta (con `#`) la línea del alias:
 
 ```bash
 nano ~/.bashrc
@@ -232,45 +222,45 @@ Luego recarga la configuración:
 source ~/.bashrc
 ```
 
-## Ejemplos de Alias Útiles
+### Ejemplos de Alias Útiles
 
-### Para administración del sistema
+!!!example "Alias Para administración del sistema"
 
-```bash
-alias puertos='sudo netstat -tulanp'
-alias espacio='df -h'
-alias memoria='free -h'
-alias procesos='ps aux | less'
-```
+    ```bash
+    alias puertos='sudo netstat -tulanp'
+    alias espacio='df -h'
+    alias memoria='free -h'
+    alias procesos='ps aux | less'
+    ```
 
-### Para desarrollo
+!!!example "Alias Para desarrollo"
 
-```bash
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push'
-alias python='python3'
-```
+    ```bash
+    alias gs='git status'
+    alias ga='git add'
+    alias gc='git commit -m'
+    alias gp='git push'
+    alias python='python3'
+    ```
 
-### Para navegar rápidamente
+!!!example "Alias Para navegar rápidamente"
 
-```bash
-alias ..='cd ..'
-alias ...='cd ../..'
-alias home='cd ~'
-alias desktop='cd ~/Desktop'
-```
+    ```bash
+    alias ..='cd ..'
+    alias ...='cd ../..'
+    alias home='cd ~'
+    alias desktop='cd ~/Desktop'
+    ```
 
-### Para seguridad
+!!!example "Alias Para seguridad"
 
-```bash
-alias rm='rm -i'        # Pide confirmación antes de borrar
-alias cp='cp -i'        # Pide confirmación antes de sobrescribir
-alias mv='mv -i'        # Pide confirmación antes de sobrescribir
-```
+    ```bash
+    alias rm='rm -i'        # Pide confirmación antes de borrar
+    alias cp='cp -i'        # Pide confirmación antes de sobrescribir
+    alias mv='mv -i'        # Pide confirmación antes de sobrescribir
+    ```
 
-## Alias con Parámetros
+### Alias con Parámetros
 
 Los alias no aceptan parámetros directamente, pero puedes usar funciones para eso:
 
@@ -286,7 +276,7 @@ Uso:
 buscar documento.txt
 ```
 
-## Ver el Comando Real de un Alias
+### Ver el Comando Real de un Alias
 
 Si quieres ejecutar el comando original sin el alias:
 

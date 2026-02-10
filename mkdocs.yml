@@ -109,3 +109,14 @@ nav:
     - 10_05_linea_comandos_linux.md
     - 10_06_comandos_basicos_alias.md
     - 10_07_gestion_directorios.md
+    - 10_08_gestion_ficheros.md
+    - 10_09_redireccionamiento_tuberias.md
+    - 10_10_visualizacion_contenido.md
+    - 10_11_procesamiento_avanzado_texto.md
+
+  - Administración de usuarios y permisos en Linux:
+    - 11_01_usuarios_grupos_linux.md
+    - 11_02_gestion_entorno_grafico.md
+    - 11_03_gestion_linea_comandos.md
+    - 11_04_sistema_permisos_ugo.md
+    - 11_05_permisos_umask.md

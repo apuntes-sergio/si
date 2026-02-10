@@ -3,16 +3,12 @@ title: La Línea de Comandos de GNU/Linux
 description:  Fundamentos de la Línea de Comandos en Linux
 ---
 
-## Introducción
-
 La línea de comandos de Linux es una herramienta **extremadamente potente** que permite realizar cualquier acción en el sistema. A diferencia de Windows, en Linux el entorno gráfico es opcional: podemos instalar y administrar completamente el sistema sin interfaz gráfica.
 
 !!! info "Linux sin entorno gráfico"
     Los servidores Linux suelen instalarse sin interfaz gráfica para optimizar recursos y mejorar la seguridad.
 
-## Permisos y Usuarios
-
-### El Superusuario: root
+## Permisos y Usuarios. El Superusuario: `root`
 
 No todos los usuarios pueden ejecutar todos los comandos. Muchas operaciones requieren **permisos de administrador**.
 
@@ -24,11 +20,11 @@ No todos los usuarios pueden ejecutar todos los comandos. Muchas operaciones req
 !!! warning "Precaución con root"
     Cuando ejecutamos comandos como root, el sistema **no pide confirmaciones**. Asume que sabemos lo que hacemos. Un comando mal escrito puede dañar el sistema.
 
-### Recomendación de uso
+!!!tip "Recomendación de uso"
 
-- ✅ Trabaja siempre como **usuario normal**
-- ⚠️ Solo conviértete en root cuando sea **estrictamente necesario**
-- 🔒 Vuelve a tu usuario normal inmediatamente después
+    - ✅ Trabaja siempre como **usuario normal**
+    - ⚠️ Solo conviértete en root cuando sea **estrictamente necesario**
+    - 🔒 Vuelve a tu usuario normal inmediatamente después
 
 ## Cambiar de Usuario
 
@@ -84,25 +80,24 @@ Linux arranca por defecto **7 terminales**:
 - **6 terminales de texto**: `tty1` a `tty6`
 - **1 terminal gráfica**: `tty7` (o `tty1` en algunas distribuciones)
 
-#### Cambiar entre terminales
-
-Usa la combinación: ++ctrl+alt++++"F1"++ hasta ++ctrl+alt++++"F7"++
+Para cambiar entre terminales usa la combinación: ++ctrl+alt++++"F1"++ hasta ++ctrl+alt++++"F7"++
 
 ```
-Ctrl + Alt + F1     → Primera terminal de texto (tty1)
-Ctrl + Alt + F2     → Segunda terminal de texto (tty2)
+Ctrl + Alt + F1     → Primera terminal de gráfica (tty1)
+Ctrl + Alt + F2     → Segunda terminal de gráfica (tty2)
+Ctrl + Alt + F3     → Primera terminal de texto (tty3)
 ...
-Ctrl + Alt + F7     → Terminal gráfica (tty7)
+Ctrl + Alt + F7     → Terminal texto (tty7)
 ```
 
 !!! example "Nombres de las terminales"
     - Terminal 1: `/dev/tty1`
     - Terminal 2: `/dev/tty2`
-    - Terminal gráfica: `/dev/tty7` (o `/dev/tty1` según distribución)
+    - Terminal gráfica: `/dev/tty1` (o `/dev/tty7` según distribución puede cambiar)
 
 ### Pseudoterminales (PTS)
 
-Dentro del entorno gráfico, puedes abrir múltiples **ventanas de terminal**. Cada una se denomina **pseudoterminal** y se identifica como `pts/N`.
+Dentro del entorno gráfico, puedes abrir múltiples **ventanas de terminal**. Cada una se denomina **pseudoterminal** y se identifica como `pts/N`. Esto no es así en todos las distribuciones linux.id
 
 ```bash
 pts/0    # Primera terminal abierta en el entorno gráfico
@@ -135,7 +130,7 @@ who
 
 El **shell** es el programa que interpreta y ejecuta los comandos que escribimos en la terminal.
 
-### Shells disponibles
+Shells disponibles:
 
 | Shell | Ubicación | Descripción |
 |-------|-----------|-------------|
@@ -147,7 +142,7 @@ El **shell** es el programa que interpreta y ejecuta los comandos que escribimos
 !!! info "Shell por defecto"
     Cada usuario tiene asignado un shell por defecto, que se especifica en el archivo `/etc/passwd`.
 
-### Ver el shell de un usuario
+Para ver el shell de un usuario
 
 ```bash
 cat /etc/passwd | grep sergio
@@ -199,7 +194,7 @@ ls --help           # Ayuda rápida del comando ls
 
 Una de las funciones más útiles: **no es necesario escribir comandos completos**.
 
-### ¿Cómo funciona?
+¿Cómo funciona?
 
 1. Escribe las primeras letras del comando
 2. Pulsa ++tab++
@@ -216,9 +211,7 @@ Una de las funciones más útiles: **no es necesario escribir comandos completos
         re[TAB][TAB]    → Muestra: reboot, rename, resize, reset...
         ```
 
-### Autocompletado de archivos y directorios
-
-También funciona con nombres de archivos y directorios:
+También funciona con **nombres de archivos y directorios**:
 
 ```bash
 cd /home/ser[TAB]              → cd /home/sergio/
@@ -234,12 +227,12 @@ cp /etc/netw[TAB]              → cp /etc/network/
 
 Linux guarda un historial de todos los comandos que has ejecutado.
 
-### Navegar por el historial
+Navegar por el historial:
 
 - ++arrow-up++: Comando anterior
 - ++arrow-down++: Comando siguiente
 
-### Ver todo el historial
+Ver todo el historial:
 
 ```bash
 history             # Muestra todos los comandos guardados
@@ -254,7 +247,7 @@ history             # Muestra todos los comandos guardados
     5  history
     ```
 
-### Ejecutar un comando del historial
+Ejecutar un comando del historial: 
 
 ```bash
 !3                  # Ejecuta el comando número 3 del historial
@@ -268,7 +261,7 @@ history             # Muestra todos los comandos guardados
 comando [-o | --opción] [argumentos]
 ```
 
-### Componentes
+Componentes:
 
 | Elemento | Descripción | Ejemplo |
 |----------|-------------|---------|
@@ -277,7 +270,7 @@ comando [-o | --opción] [argumentos]
 | **opción larga** | Palabra precedida de `--` | `--all`, `--help` |
 | **argumentos** | Parámetros del comando | nombres de archivos, rutas |
 
-### Formas de especificar opciones
+Formas de especificar opciones: 
 
 === "Opciones separadas"
     ```bash
@@ -290,8 +283,6 @@ comando [-o | --opción] [argumentos]
     ls -ar              # Equivalente a -a -r
     ls -lah             # Equivalente a -l -a -h
     ```
-
-### Opciones con argumentos
 
 Algunas opciones aceptan valores:
 

@@ -305,6 +305,8 @@ Opciones principales
 
 ## Ejemplos Prácticos Completos
 
+En estos ejemplos, vamos a ver el uso de `|` *(pipe)*, que veremos más detenidamente en el siguiente apartado. Por ello, para comprender estos usos es mejor revisar la siguiente sección.
+
 !!!example "Escenario 1: Análisis de logs"
 
     ```bash
@@ -366,37 +368,7 @@ Opciones principales
     tail -f /var/log/apache2/access.log | grep "192.168.1"
     ```
 
----
 
-## Uso con Redireccionamiento
-
-!!!example "Guardar salidas"
-
-    ```bash
-    # Guardar primeras líneas en archivo
-    head -100 /var/log/syslog > inicio.txt
-
-    # Añadir últimas líneas
-    tail -100 /var/log/syslog >> inicio.txt
-
-    # Extraer rango específico
-    head -1000 archivo.txt | tail -500 > lineas_500_1000.txt
-    ```
-
-!!!example "Combinar con pipes"
-
-    ```bash
-    # Ver procesos, ordenar y mostrar primeros 10
-    ps aux | sort -k 3 -r | head -10
-
-    # Archivos más grandes del directorio
-    ls -lh | sort -k 5 -h -r | head -10
-
-    # Últimas líneas con error
-    tail -100 /var/log/syslog | grep "error" | less
-    ```
-
----
 
 ## Tabla Comparativa
 

@@ -324,6 +324,23 @@ Opciones principales
     cat texto.txt | tr ' ' '\n' | sort -u | wc -l
     ```
 
+## `nl` - Numerar líneas
+
+Numera las líneas de un archivo (similar a `cat -n`).
+
+Sintaxis
+
+```bash
+nl [opciones] archivo
+```
+
+!!!example "Ejemplos"
+
+    ```bash
+    nl archivo.txt                             # Numera líneas
+    nl -ba archivo.txt                         # Numera todas (incluso vacías)
+    ```
+
 
 ## `tr` - Transformar caracteres
 
@@ -523,6 +540,8 @@ Flags de sustitución
 
 Hay muchas más opciones en el comando `sed`, pero nosotros lo dejaremos aquí.
 
+
+
 ## `paste` - Unir líneas de archivos
 
 Junta las líneas de dos o más archivos lado a lado.
@@ -596,24 +615,6 @@ Opciones principales
     diff archivo1.txt archivo2.txt             # Diferencias básicas
     diff -y archivo1.txt archivo2.txt          # Lado a lado
     diff -u archivo1.txt archivo2.txt          # Formato unificado
-    ```
-
-
-## `nl` - Numerar líneas
-
-Numera las líneas de un archivo (similar a `cat -n`).
-
-Sintaxis
-
-```bash
-nl [opciones] archivo
-```
-
-!!!example "Ejemplos"
-
-    ```bash
-    nl archivo.txt                             # Numera líneas
-    nl -ba archivo.txt                         # Numera todas (incluso vacías)
     ```
 
 ---
@@ -760,6 +761,7 @@ Carlos:Sanchez:26:Valencia
 
 !!! example "Ejercicio 4: Combinación avanzada"
     Usando `/var/log/syslog` (o cualquier log):
+
     1. Encuentra las 5 palabras más repetidas
     2. Cuenta cuántas líneas contienen "error" o "warning"
     3. Extrae solo las horas de los eventos (usando cut)
@@ -767,6 +769,7 @@ Carlos:Sanchez:26:Valencia
 
 !!! example "Ejercicio 5: Procesamiento de datos"
     Crea un archivo CSV con datos de productos (nombre, precio, categoría):
+    
     1. Ordena por precio
     2. Extrae solo los nombres de productos
     3. Cuenta productos por categoría

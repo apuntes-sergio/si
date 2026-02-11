@@ -110,8 +110,8 @@ nav:
     - 10_06_comandos_basicos_alias.md
     - 10_07_gestion_directorios.md
     - 10_08_gestion_ficheros.md
-    - 10_09_redireccionamiento_tuberias.md
-    - 10_10_visualizacion_contenido.md
+    - 10_09_visualizacion_contenido.md
+    - 10_10_redireccionamiento_tuberias.md
     - 10_11_procesamiento_avanzado_texto.md
 
   - Administración de usuarios y permisos en Linux:

@@ -465,27 +465,29 @@ Crear archivos `tar`:
 Extraer archivos `tar`
 
 !!!example "Sin descomprimir:"
-```bash
-tar xvf archivo.tar                   # Extrae aquí
-```
+    ```bash
+    tar xvf archivo.tar                   # Extrae aquí
+    ```
 
 !!!example "Con descompresión gzip:"
-```bash
-tar xvzf archivo.tar.gz               # Extrae y descomprime
-tar xzf backup.tar.gz                 # Forma corta
-```
+
+    ```bash
+    tar xvzf archivo.tar.gz               # Extrae y descomprime
+    tar xzf backup.tar.gz                 # Forma corta
+    ```
 
 !!!example "Extraer en directorio específico:"
-```bash
-tar xzf archivo.tar.gz -C /home/juan/Descargas    # Extrae en Descargas
-```
+
+    ```bash
+    tar xzf archivo.tar.gz -C /home/juan/Descargas    # Extrae en Descargas
+    ```
 
 !!!example "Ver contenido sin extraer"
 
-```bash
-tar tvf archivo.tar                   # Lista contenido de .tar
-tar tzf archivo.tar.gz                # Lista contenido de .tar.gz
-```
+    ```bash
+    tar tvf archivo.tar                   # Lista contenido de .tar
+    tar tzf archivo.tar.gz                # Lista contenido de .tar.gz
+    ```
 
 Ejemplos prácticos completos
 

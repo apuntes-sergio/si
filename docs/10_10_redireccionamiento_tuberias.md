@@ -214,6 +214,7 @@ comando > salida.txt 2>&1              # Ambos al mismo archivo
 ```
 
 **Explicación:**
+
 - `> salida.txt`: Redirige stdout a salida.txt
 - `2>&1`: Redirige stderr (2) a donde apunta stdout (1)
 
@@ -249,7 +250,8 @@ Sintaxis
 comando1 | comando2 | comando3
 ```
 
-**Flujo de datos:**
+Estos tres comandos se ejecutarían de esta manera:
+
 ```
 comando1 → salida → entrada comando2 → salida → entrada comando3 → salida final
 ```
@@ -344,7 +346,32 @@ comando1 → salida → entrada comando2 → salida → entrada comando3 → sal
     comando 1> /dev/null
     ```
 
----
+
+## Comandos Útiles con Pipes
+
+### `tee` - Duplicar salida
+
+Muestra la salida en pantalla Y la guarda en archivo.
+
+!!!example "ejemplos de `tee`"
+    ```bash
+    ls -la | tee listado.txt               # Muestra y guarda
+    comando | tee -a log.txt               # Muestra y añade
+    comando | tee file1.txt file2.txt      # Guarda en múltiples archivos
+    ```
+
+### `xargs` - Construir comandos
+
+Convierte la entrada en argumentos para otro comando.
+
+!!!example "Ejemplos de paso de parámetros mediante `|` y `xargs`"
+    ```bash
+    find . -name "*.tmp" | xargs rm        # Borra todos los .tmp encontrados
+    cat urls.txt | xargs wget              # Descarga todas las URLs
+    ls *.jpg | xargs -I {} cp {} backup/   # Copia cada jpg a backup
+    ```
+
+
 
 ## Casos de Uso Reales
 
@@ -400,7 +427,7 @@ comando1 → salida → entrada comando2 → salida → entrada comando3 → sal
 | `2>>` | Redirige errores (añade) | `comando 2>> errores.log` |
 | `&>` | Redirige todo (salida + errores) | `comando &> todo.txt` |
 | `2>&1` | Redirige errores a salida | `comando > out.txt 2>&1` |
-| `\|` | Pipe (conecta comandos) | `cat file \| grep "text"` |
+| `|` | Pipe (conecta comandos) | `cat file | grep "text"` |
 | `> /dev/null` | Descarta salida | `comando > /dev/null` |
 | `2> /dev/null` | Descarta errores | `comando 2> /dev/null` |
 
@@ -432,36 +459,36 @@ comando1 → salida → entrada comando2 → salida → entrada comando3 → sal
 
 ## Patrones Comunes
 
-Ver logs en tiempo real filtrando
+!!!example "Ver logs en tiempo real filtrando"
 
-```bash
-tail -f /var/log/syslog | grep --line-buffered "error"
-```
+    ```bash
+    tail -f /var/log/syslog | grep --line-buffered "error"
+    ```
 
-Buscar y contar
+!!!example "Buscar y contar"
 
-```bash
-cat archivo.txt | grep "patrón" | wc -l
-```
+    ```bash
+    cat archivo.txt | grep "patrón" | wc -l
+    ```
 
-Ordenar y mostrar únicos
+!!!example "Ordenar y mostrar únicos"
 
-```bash
-cat lista.txt | sort | uniq
-```
+    ```bash
+    cat lista.txt | sort | uniq
+    ```
 
-Paginar resultados largos
+!!!example "Paginar resultados largos"
 
-```bash
-comando_con_mucha_salida | less
-```
+    ```bash
+    comando_con_mucha_salida | less
+    ```
 
-Guardar salida y mostrar en pantalla (tee)
+!!!example "Guardar salida y mostrar en pantalla (`tee`)"
 
-```bash
-comando | tee archivo.txt              # Muestra Y guarda
-comando | tee -a archivo.txt           # Muestra Y añade al archivo
-```
+    ```bash
+    comando | tee archivo.txt              # Muestra Y guarda
+    comando | tee -a archivo.txt           # Muestra Y añade al archivo
+    ```
 
 ---
 
@@ -487,45 +514,3 @@ comando | tee -a archivo.txt           # Muestra Y añade al archivo
     - ⚠️ Los pipes fallan silenciosamente si un comando falla
 
 ---
-
-## Comandos Útiles con Pipes
-
-### `tee` - Duplicar salida
-
-Muestra la salida en pantalla Y la guarda en archivo.
-
-```bash
-ls -la | tee listado.txt               # Muestra y guarda
-comando | tee -a log.txt               # Muestra y añade
-comando | tee file1.txt file2.txt      # Guarda en múltiples archivos
-```
-
-### `xargs` - Construir comandos
-
-Convierte la entrada en argumentos para otro comando.
-
-```bash
-find . -name "*.tmp" | xargs rm        # Borra todos los .tmp encontrados
-cat urls.txt | xargs wget              # Descarga todas las URLs
-ls *.jpg | xargs -I {} cp {} backup/   # Copia cada jpg a backup
-```
-
----
-
-## Resumen
-
-El **redireccionamiento** y las **tuberías** son fundamentales en Linux:
-
-- **Redireccionamiento**: Controla dónde van la salida, errores y de dónde viene la entrada
-- **Tuberías**: Conecta comandos para crear flujos de trabajo potentes
-- **Combinación**: Permite automatizar tareas complejas con comandos simples
-
-!!! success "Clave del éxito"
-    Dominar estos conceptos te permite:
-    - 🎯 Automatizar tareas repetitivas
-    - 📊 Procesar grandes cantidades de datos
-    - 🔍 Filtrar y analizar información eficientemente
-    - 💾 Gestionar logs y salidas de comandos
-    - ⚡ Crear scripts más potentes
-
-**La filosofía Unix:** Haz una cosa y hazla bien. Usa pipes para combinar herramientas simples y crear soluciones complejas.

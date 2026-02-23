@@ -6,6 +6,7 @@ description:  Administración de usuarios y grupos en Linux.
 GNU/Linux es un **sistema operativo multiusuario**: múltiples usuarios pueden trabajar simultáneamente en el mismo sistema de forma segura y organizada.
 
 Para garantizar la seguridad y el correcto funcionamiento del sistema, Linux implementa mecanismos de:
+
 - **Autenticación**: Verificar la identidad de los usuarios
 - **Autorización**: Controlar qué puede hacer cada usuario
 - **Protección de datos**: Aislar los datos de cada usuario
@@ -21,7 +22,7 @@ Para utilizar un sistema GNU/Linux es necesario disponer de una **cuenta de usua
 | **Login** | Nombre de usuario (identificador único) | `sergio`, `jperez`, `alumno1` |
 | **Password** | Contraseña (para autenticación) | `********` |
 
-### Proceso de inicio de sesión
+Proceso de inicio de sesión:
 
 1. El usuario introduce su **login** (nombre de usuario)
 2. El sistema solicita la **password** (contraseña)
@@ -31,13 +32,13 @@ Para utilizar un sistema GNU/Linux es necesario disponer de una **cuenta de usua
 !!! warning "Seguridad"
     Si te equivocas al introducir tu nombre de usuario o contraseña, el sistema te denegará el acceso y no podrás entrar. Este mecanismo protege el sistema contra accesos no autorizados.
 
----
 
-## El Usuario Root
+
+## El Usuario `root`
 
 El **usuario root** es el **administrador del sistema** en GNU/Linux.
 
-### Características de root
+### Características de `root`
 
 - ✅ **Control total**: Puede hacer cualquier operación en el sistema
 - ✅ **Crea usuarios**: Gestiona todas las cuentas del sistema
@@ -64,13 +65,11 @@ sudo apt update              # Ejecuta como root, pide tu contraseña
 sudo systemctl restart nginx # Acción administrativa
 ```
 
----
-
-## Identificadores de Usuario: UID
+### Identificadores de Usuario: UID
 
 Cada usuario del sistema tiene un **UID** (User IDentifier) - un número único que lo identifica.
 
-### Rangos de UID
+Rangos de UID:
 
 | Rango UID | Tipo de Usuario | Ejemplo |
 |-----------|-----------------|---------|
@@ -81,7 +80,7 @@ Cada usuario del sistema tiene un **UID** (User IDentifier) - un número único 
 !!! info "¿Por qué números?"
     Internamente, Linux trabaja con números (UID) en lugar de nombres. Es más eficiente y evita problemas con nombres duplicados.
 
-### Ejemplos de UID
+Ejemplos de UID: 
 
 ```bash
 root:x:0:0:root:/root:/bin/bash           # UID = 0
@@ -89,19 +88,18 @@ sergio:x:1000:1000:Sergio:/home/sergio:/bin/bash   # UID = 1000
 juan:x:1001:1001:Juan Perez:/home/juan:/bin/bash   # UID = 1001
 ```
 
----
 
 ## Grupos de Usuarios
 
 Los **grupos** permiten organizar usuarios y gestionar permisos de forma eficiente.
 
-### ¿Para qué sirven los grupos?
+Para comprender el uso de los grupos, imagina un centro educativo:
 
-Imagina un centro educativo:
 - Grupo **profesores**: Acceso a carpetas de notas, exámenes, materiales
 - Grupo **alumnos**: Acceso a carpetas de trabajos, apuntes
 
 Cuando creas un nuevo profesor:
+
 - Lo añades al grupo "profesores"
 - Automáticamente tiene acceso a todo lo que necesita
 - No tienes que configurar permisos individualmente
@@ -109,7 +107,7 @@ Cuando creas un nuevo profesor:
 !!! tip "Administración eficiente"
     Los grupos permiten **administrar permisos colectivamente** en lugar de usuario por usuario.
 
-### Características de los grupos
+Características de los grupos: 
 
 - ✅ Un grupo puede contener **múltiples usuarios**
 - ✅ Un usuario puede pertenecer a **múltiples grupos**
@@ -117,13 +115,12 @@ Cuando creas un nuevo profesor:
 - ✅ Todo usuario debe tener un **grupo principal** (obligatorio)
 - ✅ Puede tener **grupos secundarios** (opcional)
 
----
 
-## Identificadores de Grupo: GID
+### Identificadores de Grupo: GID
 
 Cada grupo tiene un **GID** (Group IDentifier) - un número único que lo identifica.
 
-### Rangos de GID
+Rangos de GID: 
 
 | Rango GID | Tipo de Grupo | Ejemplo |
 |-----------|---------------|---------|
@@ -134,7 +131,7 @@ Cada grupo tiene un **GID** (Group IDentifier) - un número único que lo identi
 !!! info "GID = UID"
     Cuando creas un usuario, normalmente se crea automáticamente un grupo con el mismo nombre y mismo número (GID = UID).
 
-### Ejemplos de GID
+Ejemplos de GID:
 
 ```bash
 root:x:0:                              # GID = 0
@@ -142,24 +139,22 @@ sergio:x:1000:                         # GID = 1000, grupo principal de sergio
 profesores:x:1003:juan,ana,pedro       # GID = 1003, miembros: juan, ana, pedro
 ```
 
----
+### Grupo Principal vs Grupos Secundarios
 
-## Grupo Principal vs Grupos Secundarios
-
-### Grupo Principal (Primario)
+Grupo Principal (Primario):
 
 - **Obligatorio**: Todo usuario DEBE tener un grupo principal
 - **Único**: Solo puede tener UN grupo principal
 - **Por defecto**: Los archivos que crea el usuario pertenecen a este grupo
 - **Creación automática**: Normalmente se crea un grupo con el nombre del usuario
 
-### Grupos Secundarios
+Grupos Secundarios:
 
 - **Opcionales**: Un usuario puede no tener grupos secundarios
 - **Múltiples**: Un usuario puede pertenecer a muchos grupos secundarios
 - **Permisos adicionales**: Dan acceso a recursos compartidos
 
-### Ejemplo visual
+Ejemplo visual:
 
 ```
 Usuario: juan
@@ -171,16 +166,14 @@ Usuario: juan
 ```
 
 **¿Qué significa esto?**
+
 - Juan crea archivos que pertenecen al grupo "juan"
 - Juan puede acceder a recursos del grupo "profesores"
 - Juan puede acceder a recursos del grupo "informatica"
 - Juan puede acceder a recursos del grupo "claustro"
 
----
 
-## Ejemplo Práctico
-
-### Escenario: Centro Educativo
+## Ejemplo Práctico: Centro Educativo
 
 **Usuarios:**
 ```
@@ -213,14 +206,14 @@ informatica   (GID: 2003) - Miembros: sergio, juan (alumno destacado)
 
 El sistema GNU/Linux trabaja **internamente con números** (UID y GID), no con nombres.
 
-### ¿Por qué?
+¿Por qué?
 
 - ⚡ **Eficiencia**: Comparar números es más rápido que comparar texto
 - 🔒 **Seguridad**: Evita problemas con caracteres especiales
 - 🎯 **Unicidad**: Los números garantizan identificación única
 - 💾 **Espacio**: Los números ocupan menos que los nombres
 
-### Los nombres son para humanos
+Los nombres son para humanos
 
 ```bash
 # Lo que ves:
@@ -239,26 +232,24 @@ El sistema GNU/Linux trabaja **internamente con números** (UID y GID), no con n
 
 El sistema de usuarios y grupos en Linux proporciona:
 
-### 1. Aislamiento
+1. **Aislamiento**. Cada usuario tiene su propio espacio:
 
-Cada usuario tiene su propio espacio:
-- **Directorio personal**: `/home/usuario`
-- **Archivos privados**: Solo accesibles por él
-- **Procesos propios**: Ejecuta programas en su contexto
+    - **Directorio personal**: `/home/usuario`
+    - **Archivos privados**: Solo accesibles por él
+    - **Procesos propios**: Ejecuta programas en su contexto
 
-### 2. Control de Acceso
+2. **Control de Acceso**
 
-- Solo el propietario (o root) puede modificar sus archivos
-- Los grupos permiten compartir selectivamente
-- Los permisos definen qué puede hacer cada uno
+    - Solo el propietario (o root) puede modificar sus archivos
+    - Los grupos permiten compartir selectivamente
+    - Los permisos definen qué puede hacer cada uno
 
-### 3. Auditoría
+3. **Auditoría**
 
-- Cada archivo tiene un propietario conocido
-- Se puede rastrear quién hizo qué
-- Los logs registran acciones por usuario
+    - Cada archivo tiene un propietario conocido
+    - Se puede rastrear quién hizo qué
+    - Los logs registran acciones por usuario
 
----
 
 ## Comandos Básicos de Información
 
@@ -271,21 +262,21 @@ groups              # Mis grupos
 who                 # ¿Quién está conectado?
 ```
 
-**Ejemplo de salida:**
-```bash
-$ whoami
-sergio
+!!!example "Ejemplo de salida:"
+    ```bash
+    $ whoami
+    sergio
 
-$ id
-uid=1000(sergio) gid=1000(sergio) grupos=1000(sergio),27(sudo),1003(profesores)
+    $ id
+    uid=1000(sergio) gid=1000(sergio) grupos=1000(sergio),27(sudo),1003(profesores)
 
-$ groups
-sergio sudo profesores
+    $ groups
+    sergio sudo profesores
 
-$ who
-sergio   tty1         2026-02-10 09:30
-juan     pts/0        2026-02-10 10:15
-```
+    $ who
+    sergio   tty1         2026-02-10 09:30
+    juan     pts/0        2026-02-10 10:15
+    ```
 
 ---
 

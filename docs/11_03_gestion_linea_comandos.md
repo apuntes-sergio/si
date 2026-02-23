@@ -19,7 +19,7 @@ La gestión de usuarios y grupos desde la **terminal** es la forma más potente,
 
 En GNU/Linux, **todo son archivos**. La información de usuarios, grupos y contraseñas se almacena en archivos de texto dentro de `/etc`.
 
-### Ubicación de los archivos
+Ubicación de los archivos:
 
 | Archivo | Contenido |
 |---------|-----------|
@@ -34,11 +34,9 @@ En GNU/Linux, **todo son archivos**. La información de usuarios, grupos y contr
 
 ---
 
-## `/etc/passwd` - Información de Usuarios
+### `/etc/passwd` - Información de Usuarios
 
 Contiene la información básica de todos los usuarios del sistema.
-
-### Estructura
 
 Cada línea representa un usuario, con **7 campos** separados por dos puntos (`:`):
 
@@ -46,7 +44,7 @@ Cada línea representa un usuario, con **7 campos** separados por dos puntos (`:
 nombre:x:UID:GID:comentario:directorio_home:shell
 ```
 
-### Descripción de los campos
+Descripción de los campos:
 
 | Campo | Posición | Descripción | Ejemplo |
 |-------|----------|-------------|---------|
@@ -58,23 +56,24 @@ nombre:x:UID:GID:comentario:directorio_home:shell
 | **Directorio home** | 6 | Carpeta personal del usuario | `/home/jperez` |
 | **Shell** | 7 | Intérprete de comandos | `/bin/bash` |
 
-### Ejemplos reales
+!!!example "Ejemplos reales"
 
-```bash
-root:x:0:0:root:/root:/bin/bash
-sergio:x:1000:1000:Sergio Rey:/home/sergio:/bin/bash
-jperez:x:1130:1003:Juan Pérez:/home/jperez:/bin/bash
-vmarti:x:1131:1003::/home/vmarti:/bin/bash
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-```
+    ```bash
+    root:x:0:0:root:/root:/bin/bash
+    sergio:x:1000:1000:Sergio Rey:/home/sergio:/bin/bash
+    jperez:x:1130:1003:Juan Pérez:/home/jperez:/bin/bash
+    vmarti:x:1131:1003::/home/vmarti:/bin/bash
+    www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+    ```
 
-**Análisis:**
-- `root`: UID=0 (siempre), home en `/root`, shell bash
-- `sergio`: Usuario normal (UID=1000), grupo principal 1000
-- `jperez`: UID=1130, grupo principal 1003 (compartido con vmarti)
-- `www-data`: Usuario del sistema (UID=33), sin shell de login
+    **Análisis:**
 
-### Ver el archivo
+    - `root`: UID=0 (siempre), home en `/root`, shell bash
+    - `sergio`: Usuario normal (UID=1000), grupo principal 1000
+    - `jperez`: UID=1130, grupo principal 1003 (compartido con vmarti)
+    - `www-data`: Usuario del sistema (UID=33), sin shell de login
+
+Para ver el archivo:
 
 ```bash
 cat /etc/passwd                # Ver todo el archivo
@@ -87,17 +86,17 @@ tail -5 /etc/passwd           # Ver los últimos 5 usuarios
 
 ---
 
-## `/etc/shadow` - Contraseñas Cifradas
+### `/etc/shadow` - Contraseñas Cifradas
 
 Contiene las contraseñas cifradas y la información de caducidad de las mismas.
 
-### Estructura
+Estructura: 
 
 ```
 nombre:contraseña_cifrada:último_cambio:mín:máx:aviso:inactivo:expiración:reservado
 ```
 
-### Campos principales
+Campos principales:
 
 | Campo | Descripción |
 |-------|-------------|
@@ -110,12 +109,12 @@ nombre:contraseña_cifrada:último_cambio:mín:máx:aviso:inactivo:expiración:r
 | **Días inactivos** | Días tras expirar antes de deshabilitar la cuenta |
 | **Fecha de expiración** | Días desde 01/01/1970 cuando expira la cuenta |
 
-### Ejemplo
+!!!example "Ejemplo"
 
-```bash
-sergio:$6$random$hash...:19740:0:99999:7:::
-jperez:$6$random$hash...:19740:5:90:7:14::
-```
+    ```bash
+    sergio:$6$random$hash...:19740:0:99999:7:::
+    jperez:$6$random$hash...:19740:5:90:7:14::
+    ```
 
 !!! warning "Solo lectura de root"
     Por seguridad, **solo root** puede leer `/etc/shadow`:
@@ -123,13 +122,10 @@ jperez:$6$random$hash...:19740:5:90:7:14::
     sudo cat /etc/shadow
     ```
 
----
 
-## `/etc/group` - Información de Grupos
+### `/etc/group` - Información de Grupos
 
 Contiene la información de todos los grupos del sistema.
-
-### Estructura
 
 Cada línea representa un grupo, con **4 campos** separados por dos puntos (`:`):
 
@@ -137,7 +133,7 @@ Cada línea representa un grupo, con **4 campos** separados por dos puntos (`:`)
 nombre_grupo:x:GID:lista_de_miembros
 ```
 
-### Descripción de los campos
+Descripción de los campos:
 
 | Campo | Posición | Descripción | Ejemplo |
 |-------|----------|-------------|---------|
@@ -146,27 +142,28 @@ nombre_grupo:x:GID:lista_de_miembros
 | **GID** | 3 | Identificador único del grupo | `1003` |
 | **Miembros** | 4 | Usuarios separados por comas | `jperez,vmarti,gllopis` |
 
-### Ejemplos reales
+!!!example "Ejemplos reales"
 
-```bash
-root:x:0:
-sergio:x:1000:
-sudo:x:27:sergio,juan
-alumnos:x:1003:
-smr:x:1004:jperez,vmarti,gllopis,ralos,fmonllor
-profesores:x:1005:sergio,ana,pedro
-```
+    ```bash
+    root:x:0:
+    sergio:x:1000:
+    sudo:x:27:sergio,juan
+    alumnos:x:1003:
+    smr:x:1004:jperez,vmarti,gllopis,ralos,fmonllor
+    profesores:x:1005:sergio,ana,pedro
+    ```
 
-**Análisis:**
-- `root`: GID=0, sin miembros adicionales
-- `sergio`: Grupo personal del usuario sergio
-- `sudo`: Grupo de administradores, contiene a sergio y juan
-- `smr`: Grupo con 5 miembros
+    **Análisis:**
+
+    - `root`: GID=0, sin miembros adicionales
+    - `sergio`: Grupo personal del usuario sergio
+    - `sudo`: Grupo de administradores, contiene a sergio y juan
+    - `smr`: Grupo con 5 miembros
 
 !!! info "Miembros del grupo"
     La lista de miembros solo incluye usuarios para los que este es un **grupo secundario**. Los usuarios que lo tienen como grupo principal no aparecen aquí.
 
-### Ver el archivo
+Para ver el archivo:
 
 ```bash
 cat /etc/group                 # Ver todos los grupos
@@ -174,13 +171,12 @@ grep profesores /etc/group     # Buscar un grupo específico
 grep sergio /etc/group         # Ver en qué grupos está sergio
 ```
 
----
 
-## `/etc/gshadow` - Contraseñas de Grupos
+### `/etc/gshadow` - Contraseñas de Grupos
 
 Contiene las contraseñas cifradas de los grupos (raramente usado).
 
-### Estructura
+Estructura:
 
 ```
 nombre_grupo:contraseña_cifrada:administradores:miembros
@@ -191,7 +187,7 @@ nombre_grupo:contraseña_cifrada:administradores:miembros
 
 ---
 
-## `/etc/sudoers` - Privilegios de sudo
+### `/etc/sudoers` - Privilegios de sudo
 
 Configura qué usuarios pueden ejecutar `sudo` y con qué privilegios.
 
@@ -202,26 +198,25 @@ Configura qué usuarios pueden ejecutar `sudo` y con qué privilegios.
     ```
     `visudo` comprueba la sintaxis antes de guardar, evitando errores que podrían dejarte sin acceso sudo.
 
-### Ejemplos de configuración
+!!!example  "Ejemplos de configuración"
 
-```bash
-# Usuario root tiene todos los privilegios
-root    ALL=(ALL:ALL) ALL
+    ```bash
+    # Usuario root tiene todos los privilegios
+    root    ALL=(ALL:ALL) ALL
 
-# Grupo sudo puede ejecutar cualquier comando
-%sudo   ALL=(ALL:ALL) ALL
+    # Grupo sudo puede ejecutar cualquier comando
+    %sudo   ALL=(ALL:ALL) ALL
 
-# Usuario sergio puede reiniciar sin contraseña
-sergio  ALL=NOPASSWD: /sbin/reboot, /sbin/poweroff
-```
+    # Usuario sergio puede reiniciar sin contraseña
+    sergio  ALL=NOPASSWD: /sbin/reboot, /sbin/poweroff
+    ```
 
----
 
 ## Comandos de Información
 
 Antes de gestionar usuarios y grupos, veamos comandos para consultar información.
 
-### `whoami` - ¿Quién soy?
+### `whoami` - Quién soy
 
 Muestra el nombre del usuario actual.
 
@@ -271,7 +266,6 @@ groups jperez       # Grupos de jperez
 sergio sudo profesores informatica
 ```
 
----
 
 ### `who` - Usuarios conectados
 
@@ -293,7 +287,63 @@ root     pts/1        2026-02-10 11:00
 - `juan` está conectado por SSH (pts/0) desde 192.168.1.50
 - `root` está en una pseudoterminal (pts/1)
 
----
+Siguiendo exactamente el formato y la estructura de tu documentación para `useradd`, aquí tienes el bloque correspondiente al comando `su`:
+
+
+### `su` - Cambiar de usuario
+
+Permite cambiar la identidad del usuario actual a otra cuenta durante la sesión de terminal. Por defecto, si no se especifica un nombre, intenta cambiar al superusuario (`root`).
+
+Sintaxis:
+
+```bash
+su [opciones] [nombre_usuario]
+
+```
+
+Opciones principales:
+
+| Opción | Descripción | Ejemplo |
+| --- | --- | --- |
+| `-` (o `-l`) | Inicia sesión de **login** (carga entorno y variables) | `su -` |
+| `-c "comando"` | Ejecuta un comando único y finaliza | `-c "ls /root"` |
+| `-s /bin/shell` | Utiliza una shell específica para la sesión | `-s /bin/zsh` |
+
+!!!example "Ejemplo: Cambio a root (sesión limpia)"
+
+    ```bash
+    su
+    ```
+
+    - Solicita la contraseña de **root**.
+    - Carga el `PATH` y las variables de entorno de root.
+    - Cambia el directorio actual a `/root`.
+
+
+!!!example "Ejemplo: Cambio a otro usuario estándar"
+
+    ```bash
+    su amiro 
+    ```
+
+    Cambia la sesión al usuario `amiro`:
+
+    - Solicita la contraseña de **amiro** (no la de root).
+    - Carga el entorno completo del usuario destino.
+    - El directorio de trabajo pasa a ser `/home/alumnos/amiro`.
+
+
+!!! danger "Diferencia entre `su` y `su -`"
+
+    Es altamente recomendable usar siempre el guion (`-`).
+    
+    - **`su`**: Mantiene las variables de entorno del usuario original (puede causar errores de permisos en rutas).
+    - **`su -`**: Simula un inicio de sesión real, refrescando todo el entorno de trabajo.
+
+!!! info "Finalizar sesión"
+    Para volver al usuario original tras usar `su`, escribe `exit` o pulsa `Ctrl+D`.
+
+
 
 ## Gestión de Usuarios
 
@@ -301,7 +351,7 @@ root     pts/1        2026-02-10 11:00
 
 Permite establecer o cambiar la contraseña de un usuario.
 
-#### Cambiar tu propia contraseña
+Para cambiar tu propia contraseña
 
 ```bash
 passwd
@@ -311,7 +361,7 @@ Te pedirá:
 1. Contraseña actual
 2. Nueva contraseña (2 veces)
 
-#### Cambiar contraseña de otro usuario (root)
+Para cambiar contraseña de otro usuario (root)
 
 ```bash
 sudo passwd jperez
@@ -319,7 +369,7 @@ sudo passwd jperez
 
 Solo pide la nueva contraseña (2 veces).
 
-#### Opciones adicionales
+Opciones adicionales:
 
 ```bash
 passwd -l jperez        # Bloquear cuenta (lock)
@@ -331,19 +381,18 @@ passwd -e jperez        # Expirar contraseña (fuerza cambio en próximo login)
 !!! tip "Forzar cambio de contraseña"
     `passwd -e usuario` es útil cuando creas un usuario con contraseña temporal y quieres que la cambie en su primer inicio de sesión.
 
----
 
-### `useradd` - Crear usuario (método avanzado)
+### `useradd` - Crear usuario
 
 Crea un usuario con opciones específicas.
 
-#### Sintaxis
+Sintaxis: 
 
 ```bash
 sudo useradd [opciones] nombre_usuario
 ```
 
-#### Opciones principales
+Opciones principales:
 
 | Opción | Descripción | Ejemplo |
 |--------|-------------|---------|
@@ -355,27 +404,27 @@ sudo useradd [opciones] nombre_usuario
 | `-u UID` | Especifica el UID | `-u 1500` |
 | `-c "comentario"` | Comentario (nombre completo) | `-c "Juan Pérez"` |
 
-#### Ejemplos
+!!!example "Ejemplo: Crear usuario básico"
 
-**Crear usuario básico:**
-```bash
-sudo useradd -m jperez
-```
-- Crea usuario `jperez`
-- Crea `/home/jperez`
-- NO tiene contraseña aún (añádela con `passwd`)
+    ```bash
+    sudo useradd -m jperez
+    ```
+    - Crea usuario `jperez`
+    - Crea `/home/jperez`
+    - NO tiene contraseña aún (añádela con `passwd`)
 
-**Crear usuario completo:**
-```bash
-sudo useradd -m -d /home/alumnos/amiro -g empleados -G simarro,ventas -s /bin/bash -c "Antonio Miró" amiro
-```
+!!!example "Ejemplo: Crear usuario completo"
+    ```bash
+    sudo useradd -m -d /home/alumnos/amiro -g empleados -G isca,ventas -s /bin/bash -c "Antonio Miró" amiro
+    ```
 
-Crea usuario `amiro`:
-- Home: `/home/alumnos/amiro` (debe existir `/home/alumnos`)
-- Grupo principal: `empleados`
-- Grupos secundarios: `simarro`, `ventas`
-- Shell: `/bin/bash`
-- Comentario: "Antonio Miró"
+    Crea usuario `amiro`:
+
+    - Home: `/home/alumnos/amiro` (debe existir `/home/alumnos`)
+    - Grupo principal: `empleados`
+    - Grupos secundarios: `isca`, `ventas`
+    - Shell: `/bin/bash`
+    - Comentario: "Antonio Miró"
 
 !!! warning "useradd NO activa el usuario"
     Después de `useradd`, **debes establecer contraseña**:
@@ -383,19 +432,18 @@ Crea usuario `amiro`:
     sudo passwd amiro
     ```
 
----
 
 ### `adduser` - Crear usuario (método interactivo)
 
 Crea usuario de forma **interactiva y completa**.
 
-#### Sintaxis
+Sintaxis
 
 ```bash
 sudo adduser nombre_usuario
 ```
 
-#### ¿Qué hace?
+Cometido: 
 
 1. Crea el usuario
 2. Crea el grupo con su mismo nombre (grupo principal)
@@ -404,34 +452,34 @@ sudo adduser nombre_usuario
 5. Pide información adicional (nombre completo, teléfono, etc.)
 6. Copia archivos de configuración de `/etc/skel/`
 
-#### Ejemplo
+!!!example "Ejemplo"
 
-```bash
-sudo adduser jperez
-```
+    ```bash
+    sudo adduser jperez
+    ```
 
-**Salida interactiva:**
-```
-Añadiendo el usuario `jperez' ...
-Añadiendo el nuevo grupo `jperez' (1001) ...
-Añadiendo el nuevo usuario `jperez' (1001) con grupo `jperez' ...
-Creando el directorio personal `/home/jperez' ...
-Copiando los ficheros desde `/etc/skel' ...
-Nueva contraseña: 
-Vuelva a escribir la nueva contraseña: 
-passwd: contraseña actualizada correctamente
-Cambiando la información de usuario para jperez
-Introduzca el nuevo valor, o presione INTRO para usar el valor predeterminado
-	Nombre completo []: Juan Pérez
-	Número de habitación []: 
-	Teléfono de trabajo []: 123456789
-	Teléfono de casa []: 
-	Otro []: 
-¿Es correcta la información? [S/n] S
-```
+    Salida interactiva:
+    ```
+    Añadiendo el usuario `jperez' ...
+    Añadiendo el nuevo grupo `jperez' (1001) ...
+    Añadiendo el nuevo usuario `jperez' (1001) con grupo `jperez' ...
+    Creando el directorio personal `/home/jperez' ...
+    Copiando los ficheros desde `/etc/skel' ...
+    Nueva contraseña: 
+    Vuelva a escribir la nueva contraseña: 
+    passwd: contraseña actualizada correctamente
+    Cambiando la información de usuario para jperez
+    Introduzca el nuevo valor, o presione INTRO para usar el valor predeterminado
+        Nombre completo []: Juan Pérez
+        Número de habitación []: 
+        Teléfono de trabajo []: 123456789
+        Teléfono de casa []: 
+        Otro []: 
+    ¿Es correcta la información? [S/n] S
+    ```
 
-!!! success "Recomendado para principiantes"
-    `adduser` es más fácil de usar que `useradd` porque es interactivo y crea todo automáticamente.
+!!! danger "Recomendado para principiantes, NO PARA NOSOTROS"
+    `adduser` es más fácil de usar que `useradd` porque es interactivo y crea todo automáticamente, pero para administradores de sistema no es muy útil si vamos a crear scripts, puesto que no tiene sentido lanzar un script para generar 5 usuarios y que nos pregunte dato a dato de cada uno de ellos. 
 
 #### Añadir usuario a un grupo
 
@@ -443,19 +491,18 @@ sudo adduser amiro produccion
 
 Añade el usuario `amiro` al grupo `produccion` (ambos deben existir).
 
----
 
 ### `usermod` - Modificar usuario
 
 Modifica las propiedades de un usuario existente.
 
-#### Sintaxis
+Sintaxis:
 
 ```bash
 sudo usermod [opciones] nombre_usuario
 ```
 
-#### Opciones principales
+Opciones principales
 
 Mismas que `useradd`:
 
@@ -470,38 +517,38 @@ Mismas que `useradd`:
 | `-L` | Bloquear cuenta |
 | `-U` | Desbloquear cuenta |
 
-#### Ejemplos
+!!!example "Ejemplos"
 
-**Cambiar grupo principal:**
-```bash
-sudo usermod -g profesores jperez
-```
-
-**Añadir a un grupo sin quitar los demás:**
-```bash
-sudo usermod -aG sudo jperez       # Añade a sudo, mantiene los grupos actuales
-```
-
-**Reemplazar todos los grupos secundarios:**
-```bash
-sudo usermod -G jefes,ventas,admin jperez    # Ahora solo está en estos 3 grupos
-```
-
-!!! danger "Cuidado con -G"
+    Cambiar grupo principal:
     ```bash
-    usermod -G jefes amiro          # ❌ Quita de simarro y ventas
-    usermod -aG jefes amiro         # ✅ Añade a jefes sin quitar los demás
+    sudo usermod -g profesores jperez
     ```
 
-**Cambiar shell:**
-```bash
-sudo usermod -s /bin/zsh jperez
-```
+    Añadir a un grupo sin quitar los demás:
+    ```bash
+    sudo usermod -aG sudo jperez       # Añade a sudo, mantiene los grupos actuales
+    ```
 
-**Cambiar nombre de usuario:**
-```bash
-sudo usermod -l juanp jperez       # jperez ahora se llama juanp
-```
+    Reemplazar todos los grupos secundarios:
+    ```bash
+    sudo usermod -G jefes,ventas,admin jperez    # Ahora solo está en estos 3 grupos
+    ```
+
+    !!! danger "Cuidado con -G"
+        ```bash
+        usermod -G jefes amiro          # ❌ Quita de isca y ventas
+        usermod -aG jefes amiro         # ✅ Añade a jefes sin quitar los demás
+        ```
+
+    Cambiar shell:
+    ```bash
+    sudo usermod -s /bin/zsh jperez
+    ```
+
+    Cambiar nombre de usuario:
+    ```bash
+    sudo usermod -l juanp jperez       # jperez ahora se llama juanp
+    ```
 
 ---
 
@@ -509,40 +556,39 @@ sudo usermod -l juanp jperez       # jperez ahora se llama juanp
 
 Elimina una cuenta de usuario.
 
-#### Sintaxis
+Sintaxis
 
 ```bash
 sudo userdel [opciones] nombre_usuario
 sudo deluser [opciones] nombre_usuario
 ```
 
-#### Opciones
+Opciones:
 
 | Opción | Descripción |
 |--------|-------------|
 | `-r` | Elimina también el directorio home y correo |
 | `--remove-home` | (deluser) Elimina el directorio home |
 
-#### Ejemplos
+!!!example "Ejemplos"
 
-**Eliminar usuario sin borrar archivos:**
-```bash
-sudo userdel jperez
-```
-- Elimina la cuenta
-- `/home/jperez` se conserva
+    Eliminar usuario sin borrar archivos:
+    ```bash
+    sudo userdel jperez
+    ```
+    - Elimina la cuenta
+    - `/home/jperez` se conserva
 
-**Eliminar usuario y sus archivos:**
-```bash
-sudo userdel -r jperez
-```
-- Elimina la cuenta
-- Elimina `/home/jperez` y todo su contenido
+    Eliminar usuario y sus archivos:
+    ```bash
+    sudo userdel -r jperez
+    ```
+    - Elimina la cuenta
+    - Elimina `/home/jperez` y todo su contenido
 
-!!! warning "Irreversible"
-    Con `-r`, **todos los archivos del usuario se pierden** permanentemente. Haz backup si contienen datos importantes.
+    !!! warning "Irreversible"
+        Con `-r`, **todos los archivos del usuario se pierden** permanentemente. Haz backup si contienen datos importantes.
 
----
 
 ## Gestión de Grupos
 
@@ -550,45 +596,44 @@ sudo userdel -r jperez
 
 Crea un nuevo grupo.
 
-#### Sintaxis
+Sintaxis:
 
 ```bash
 sudo groupadd [opciones] nombre_grupo
 sudo addgroup nombre_grupo
 ```
 
-#### Opciones
+Opciones: 
 
 | Opción | Descripción |
 |--------|-------------|
 | `-g GID` | Especifica el GID |
 
-#### Ejemplos
+!!!example "Ejemplos"
 
-```bash
-sudo groupadd profesores              # Crea grupo con GID automático
-sudo groupadd -g 2000 alumnos        # Crea grupo con GID 2000
-sudo addgroup desarrollo             # Método alternativo
-```
+    ```bash
+    sudo groupadd profesores              # Crea grupo con GID automático
+    sudo groupadd -g 2000 alumnos        # Crea grupo con GID 2000
+    sudo addgroup desarrollo             # Método alternativo
+    ```
 
----
 
 ### `groupdel` o `delgroup` - Eliminar grupo
 
 Elimina un grupo del sistema.
 
-#### Sintaxis
+Sintaxis:
 
 ```bash
 sudo groupdel nombre_grupo
 sudo delgroup nombre_grupo
 ```
 
-#### Ejemplo
+!!!example "Ejemplo"
 
-```bash
-sudo groupdel temporal
-```
+    ```bash
+    sudo groupdel temporal
+    ```
 
 !!! warning "No eliminar grupo principal"
     No puedes eliminar un grupo si es el **grupo principal** de algún usuario. Primero cambia el grupo principal del usuario.
@@ -597,67 +642,67 @@ sudo groupdel temporal
 
 ## Ejemplos Prácticos Completos
 
-### Escenario 1: Nuevo empleado
+!!!example "Escenario 1: Nuevo empleado"
 
-```bash
-# 1. Crear usuario con adduser (interactivo)
-sudo adduser antonio
+    ```bash
+    # 1. Crear usuario con adduser (interactivo)
+    sudo adduser antonio
 
-# 2. Añadirlo a grupos necesarios
-sudo usermod -aG sudo,ventas antonio
+    # 2. Añadirlo a grupos necesarios
+    sudo usermod -aG sudo,ventas antonio
 
-# 3. Verificar
-id antonio
-groups antonio
-```
+    # 3. Verificar
+    id antonio
+    groups antonio
+    ```
 
-### Escenario 2: Proyecto temporal
+!!!example "Escenario 2: Proyecto temporal"
 
-```bash
-# 1. Crear grupo del proyecto
-sudo groupadd -g 2500 proyecto_x
+    ```bash
+    # 1. Crear grupo del proyecto
+    sudo groupadd -g 2500 proyecto_x
 
-# 2. Añadir miembros al proyecto
-sudo usermod -aG proyecto_x juan
-sudo usermod -aG proyecto_x ana
-sudo usermod -aG proyecto_x pedro
+    # 2. Añadir miembros al proyecto
+    sudo usermod -aG proyecto_x juan
+    sudo usermod -aG proyecto_x ana
+    sudo usermod -aG proyecto_x pedro
 
-# 3. Verificar miembros
-grep proyecto_x /etc/group
-```
+    # 3. Verificar miembros
+    grep proyecto_x /etc/group
+    ```
 
-### Escenario 3: Usuario que se va de la empresa
+!!!example "Escenario 3: Usuario que se va de la empresa"
 
-```bash
-# 1. Bloquear la cuenta (no puede entrar)
-sudo passwd -l empleado_saliente
+    ```bash
+    # 1. Bloquear la cuenta (no puede entrar)
+    sudo passwd -l empleado_saliente
 
-# 2. Hacer backup de sus archivos
-sudo tar czf /backup/empleado_saliente.tar.gz /home/empleado_saliente
+    # 2. Hacer backup de sus archivos
+    sudo tar czf /backup/empleado_saliente.tar.gz /home/empleado_saliente
 
-# 3. Eliminar usuario y sus archivos
-sudo userdel -r empleado_saliente
-```
+    # 3. Eliminar usuario y sus archivos
+    sudo userdel -r empleado_saliente
+    ```
 
-### Escenario 4: Cambio de departamento
+!!!example "Escenario 4: Cambio de departamento"
 
-```bash
-# 1. Quitar de grupo antiguo y añadir a nuevo
-sudo deluser juan ventas
-sudo adduser juan marketing
+    ```bash
+    # 1. Quitar de grupo antiguo y añadir a nuevo
+    sudo deluser juan ventas
+    sudo adduser juan marketing
 
-# O con usermod (reemplaza todos los grupos secundarios):
-sudo usermod -G marketing,usuarios juan
+    # O con usermod (reemplaza todos los grupos secundarios):
+    sudo usermod -G marketing,usuarios juan
 
-# O con usermod (mantiene grupos actuales):
-sudo usermod -aG marketing juan
-```
+    # O con usermod (mantiene grupos actuales):
+    sudo usermod -aG marketing juan
+    ```
 
 ---
 
-## Resumen de Comandos
+## Resumen 
 
-### Información
+Comandos de información: 
 
 | Comando | Función |
 |---------|---------|
@@ -666,7 +711,7 @@ sudo usermod -aG marketing juan
 | `groups` | Grupos del usuario |
 | `who` | Usuarios conectados |
 
-### Usuarios
+Usuarios:
 
 | Comando | Función |
 |---------|---------|
@@ -676,7 +721,7 @@ sudo usermod -aG marketing juan
 | `usermod` | Modificar usuario |
 | `userdel` | Eliminar usuario |
 
-### Grupos
+Grupos: 
 
 | Comando | Función |
 |---------|---------|
@@ -684,9 +729,8 @@ sudo usermod -aG marketing juan
 | `groupdel` | Eliminar grupo |
 | `adduser usuario grupo` | Añadir usuario a grupo |
 
----
 
-## Archivos de Configuración
+Archivos de Configuración:
 
 | Archivo | Contenido | Permisos lectura |
 |---------|-----------|------------------|
@@ -696,7 +740,6 @@ sudo usermod -aG marketing juan
 | `/etc/gshadow` | Contraseñas de grupos | Solo root |
 | `/etc/sudoers` | Privilegios sudo | Solo root |
 
----
 
 ## Buenas Prácticas
 
@@ -743,16 +786,3 @@ sudo usermod -aG marketing juan
     3. Elimina ambos usuarios conservando sus archivos
     4. Elimina el grupo dam
 
----
-
-## Conclusión
-
-La gestión de usuarios y grupos desde la línea de comandos es:
-- 🎯 **Más potente** que la interfaz gráfica
-- ⚡ **Más rápida** para operaciones múltiples
-- 🔄 **Automatizable** mediante scripts
-- 🌐 **Universal** en cualquier sistema Linux
-
-Dominar estos comandos es **fundamental** para cualquier administrador de sistemas Linux.
-
-En el próximo apartado veremos el **sistema de permisos UGO**, que trabaja estrechamente con usuarios y grupos para controlar el acceso a archivos y directorios.

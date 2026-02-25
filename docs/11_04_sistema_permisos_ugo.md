@@ -404,7 +404,51 @@ Ejemplos prácticos
 
     A menudo, hay usuarios que se esfuerzan en demostrar que no están controlando la situación y aplican permisos **777** totales a todo. En nuestro curso, esto estará prohibido salvo casos extremos o indicaciones del profesor.
 
----
+
+
+
+#### Asignar **SetUID**, **SetGID** y **Sticky Bit**
+
+Existen dos formas de aplicar estos permisos, tal como sucede con los permisos estándar.
+
+=== "Notación simbólica"
+
+    Para usar permisos especiales en modo octal, añadimos una **cuarta cifra a la izquierda** de las tres habituales (dueño, grupo, otros).
+
+    * **SetUID:** `chmod 4755 archivo`
+    * **SetGID:** `chmod 2755 archivo`
+    * **Sticky Bit:** `chmod 1777 directorio`
+    * **Combinados:** Si quieres SetUID (4) y SetGID (2), sumas ambos: `chmod 6755 archivo`.
+
+=== "Notación octal"
+
+    Se utilizan las letras `s` para SetUID/SetGID y `t` para el Sticky Bit.
+
+    * **SetUID:** `chmod u+s archivo`
+    * **SetGID:** `chmod g+s archivo`
+    * **Sticky Bit:** `chmod o+t directorio`
+
+
+Aquí tienes una propuesta de nota técnica, redactada de forma clara y profesional, para que tus alumnos de DAM entiendan esta importante excepción de seguridad en Linux:
+
+!!!info "NOTA TÉCNICA: El 'Muro de Seguridad' en Scripts"
+
+    Es fundamental entender que, aunque el comando `chmod` nos permita asignar bits especiales a cualquier archivo, el **Kernel de Linux se comporta de forma distinta** según el tipo de archivo:
+
+    1. **SetUID (s) en archivos:** * **Binarios (Compilados):** Funciona perfectamente. El programa se ejecuta con los privilegios del dueño.
+    * **Scripts (Bash, Python, etc.):** **NO funciona.** Por motivos de seguridad, Linux ignora el bit SetUID en archivos de texto interpretados para evitar ataques de suplantación (como las *race conditions*). Si un alumno de Sergio ejecuta un script de Pepe, el proceso seguirá siendo de Sergio.
+
+
+    2. **SetGID (s) y Sticky Bit (t) en archivos:**
+    * Al igual que el SetUID, se suelen ignorar en scripts por las mismas razones de seguridad.
+
+
+    3. **SetGID (s) y Sticky Bit (t) en DIRECTORIOS:**
+    * **¡AQUÍ SÍ FUNCIONAN SIEMPRE!** A diferencia de los archivos, en los directorios estos bits no afectan a quién "ejecuta" nada, sino a cómo se gestionan los archivos dentro:
+    * El **SetGID** asegura que los nuevos archivos hereden el grupo del directorio.
+    * El **Sticky Bit** asegura que solo el dueño pueda borrar su archivo.
+
+
 
 ### `chown` - Cambiar propietario
 
@@ -581,6 +625,65 @@ Si hacemos lo mismo para establecer **Acceso a la carpeta** tenemos las siguient
     ls -ld /entregas
     # drwx-wx--T 2 root alumnos 4096 feb 10 12:00 /entregas
     ```
+
+
+
+!!! example "Caso 5: El Proyecto Compartido. Uso de `SetGID`"
+
+    Queremos que `sergio`, `juan` y `pepe` trabajen en una carpeta común llamada `/prog/proyecto_dam`. Lo ideal es que cualquier archivo que cree cualquiera de ellos pueda ser editado por los otros miembros del grupo sin tener que cambiar los permisos a mano cada vez.
+
+    1. Primero creamos el entorno. Supondremos que el grupo común se llama `programadores`.
+
+        ```bash
+        # 1. Crear el grupo y añadir a los usuarios
+        groupadd programadores
+        usermod -aG programadores sergio
+        usermod -aG programadores juan
+        usermod -aG programadores pepe
+
+        # 2. Crear la carpeta del proyecto
+        mkdir -p /prog/proyecto_dam
+
+        # 3. Cambiar el grupo dueño de la carpeta a "programadores"
+        chown :programadores /prog/proyecto_dam
+
+        # 4. Dar permisos totales al grupo y activar el SetGID (el 2 a la izquierda)
+        chmod 2770 /prog/proyecto_dam
+
+        ```
+
+    2. Ahora, veamos qué pasa cuando los usuarios crean archivos dentro. Sergio crea un archivo:
+
+        Si Sergio crea un archivo fuera de esa carpeta, el archivo pertenecería a su grupo primario (`sergio`). Pero mira qué pasa dentro:
+
+        ```bash
+        # Sergio entra y crea un script
+        su - sergio
+        cd /prog/proyecto_dam
+        touch script_sergio.sh
+
+        ls -l
+        # Resultado: -rw-rw---- 1 sergio programadores ...
+
+        ```
+
+    3. Juan crea otro archivo:
+
+        ```bash
+        su - juan
+        cd /prog/proyecto_dam
+        touch nota_juan.txt
+
+        ls -l
+        # Resultado: -rw-rw---- 1 juan programadores ...
+
+        ```
+
+    Resultado: 
+
+    1. El sistema "obliga" a que todo lo que nazca dentro de esa carpeta pertenezca al grupo `programadores`.
+    2. Como los tres pertenecen a ese grupo, todos pueden leer y editar los archivos de los demás (siempre que el `umask` o el `chmod` den permiso al grupo, claro).
+
 
 ---
 

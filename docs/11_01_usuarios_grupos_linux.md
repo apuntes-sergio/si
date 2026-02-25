@@ -56,6 +56,7 @@ El **usuario root** es el **administrador del sistema** en GNU/Linux.
 ### Usuarios administradores
 
 Además de root, en sistemas como Ubuntu existen **usuarios administradores** que:
+
 - Pertenecen al grupo **sudo** (o **wheel** en otras distribuciones)
 - Pueden ejecutar comandos con privilegios de root usando `sudo`
 - Tienen que introducir su contraseña para confirmar acciones administrativas

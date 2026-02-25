@@ -120,3 +120,12 @@ nav:
     - 11_03_gestion_linea_comandos.md
     - 11_04_sistema_permisos_ugo.md
     - 11_05_permisos_umask.md
+
+  # - Scripts de administración en Linux:
+  #   - 12_01_fundamentos_scripts.md
+  #   - 12_02_gestion_datos_comunicacion.md
+  #   - 12_03_logica_aritmetica.md
+  #   - 12_04_control_flujo.md
+  #   - 12_05_bucles.md
+  #   - 12_06_avanzada_modularidad.md
+  #   - 12_07_anexos.md

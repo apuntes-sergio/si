@@ -3,10 +3,8 @@ title: Anexos
 description: Scripts en Bash para la administración de linux
 ---
 
-# 19. ANEXOS
-
  
-## 19.1. El doble paréntesis `(( .. ))`
+## El doble paréntesis `(( .. ))`
 
 El doble paréntesis, cuyo uso en un caso muy particular ya hemos visto con el bucle for, forma un estructura con funcionamiento muy similar al comando `let`. De hecho podemos hacer lo mismo que hacíamos con `let` (El dólar para leer las variables sigue siendo opcional en este caso solamente, sólo para leer, al darles valor siempre van sin dólar):
 
@@ -53,7 +51,7 @@ do
 done
 ```
 
-## 19.2. Expresiones regulares
+## Expresiones regulares
 
 Dominar las expresiones regulares es fundamental para realizar todo tipo de operaciones en texto.
 
@@ -157,7 +155,7 @@ sergio@sergio-VirtualBox:~/script$ ls  /etc | grep -n ^d
 48:dpkg
 ```
 
-## 19.3. Número aleatorios
+## Número aleatorios
 
 A veces, estamos programando algún script en `Bash` y necesitamos (por algún motivo) generar algún **número aleatorio**. `RANDOM` es una variable de shell que se utiliza para generar enteros aleatorios en Linux. Es un comando bash interno que devuelve un entero de 16 bits en el rango 0 - 32767.Devuelve un entero diferente en cada invocación.
 
@@ -204,7 +202,7 @@ echo "El número primeado ha sido el `shuf -i0-9 -n5 -rz`"
 ```
 
 
-## 19.4. Comando `awk`
+## Comando `awk`
 
 El comando `awk` de linux es una herramienta que te permite procesar y modificar archivos de texto según tus necesidades. Con `awk` puedes buscar palabras o patrones en los archivos y realizar acciones sobre ellos, como imprimir, reemplazar o hacer operaciones matemáticas1. `Awk` también ***tiene su propio lenguaje de programación y scripting***, que te permite escribir programas más complejos y flexibles2.
 
@@ -250,7 +248,7 @@ awk 'BEGIN {srand()} {a[NR] = $0} END {for (i=1; i<=NR; i++) {n = int(rand() * N
 awk 'BEGIN {srand()} {a[NR] = $0} END {for (i=1; i<=4; i++) {n = int(rand() * NR) + 1; print a[n]}}' archivo.txt
 ```    
 
-## 19.5. Definir color y posición del texto en la consola
+## Definir color y posición del texto en la consola
 
 Para hacer que el texto aparezca de un determinado color o en una determinada posición de la consola (definida por número de columna y de fila), se utilizan una serie de códigos especiales, que luego serán interpretados por el comando echo con la opción -n (igual que cuando queremos que funcionen los saltos de línea o tabuladores `\n\t)`.
 
@@ -338,7 +336,7 @@ Para probar estos colores, simplemente debemos meter la variable entre el texto 
 echo -e "${Blue}Texto azul ${UGreen}Texto verde subrayado${Color_Off} Reset"
 ```
 
-## 19.6. Definir la posición
+## Definir la posición
 
 Se hace de una forma parecida a usar colores, es decir, mediante un código. Los 3 tipos de códigos que nos interesan son:
 
@@ -359,7 +357,7 @@ echo -e '\033[2J\033[1;1fBienvenido a: \033[4;7f La consola\033[4C...Del futuro'
 ```
 
 
-## 19.7. `Zenity`
+## `Zenity`
 
 `Zenity` es una herramienta que te permite crear cuadros de diálogo gráficos desde la línea de comandos o desde scripts de shell1. Con `Zenity` puedes interactuar con el usuario y recibir información de forma sencilla y visual. `Zenity` usa las librerías GTK y se integra bien con el entorno de escritorio GNOME, pero también funciona en otros entornos2.
 
@@ -406,7 +404,7 @@ Para más informción:
 - [DesdeLinux: Usos prácticos de la caja de dialog Zenity](https://blog.desdelinux.net/usos-practicos-de-la-caja-de-dialog-zenity/)
 
 
-## 19.8. Comandos para mejorar la salida por consola.
+## Comandos para mejorar la salida por consola.
 
 Existe una serie de comandos curiosos/divertido/inutiles que permiten mejorar nuestra interaccón con la consola. 
 
@@ -419,7 +417,7 @@ Existen suficiente literatura sobre el tema, a continuación un par de enlaces q
 - [Diez herramientas para divertirse con el arte ASCII en la terminal Linux](https://es.linux-console.net/?p=17876)
 
 
-## 19.9. Reflexión final
+## Reflexión final
 
 Finalmente cabe resaltar que todavía no hemos aprendido todas las posibilidades de programar con `bash script`. Aunque lo aprendido nos servirá para salir airosos de la mayoría de las situaciones, hay ocasiones en las que se requieren conocimientos más avanzados, y por ello, quien esté interesado puede buscar y consultar en los cientos de tutoriales y ejemplos que existen en internet.
 

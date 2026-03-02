@@ -11,7 +11,7 @@ La estructura `if` permite tomar decisiones de una forma sencilla en el programa
     ```bash
     if [ condición ]
     then
-    # instrucciones a ejecutar si se cumple la condición
+        # instrucciones a ejecutar si se cumple la condición
     fi
     ```
 
@@ -30,9 +30,9 @@ Hay una manera de que ejecute una serie de instrucciones cuando no se cumpla la 
     ```bash
     if [ condición ]
     then
-    # instrucciones a ejecutar si se cumple la condición
+        # instrucciones a ejecutar si se cumple la condición
     else
-    # instrucciones a ejecutar si no se cumple la condición
+        # instrucciones a ejecutar si no se cumple la condición
     fi
     ```
 
@@ -49,12 +49,12 @@ Por último, si queremos que cuando una condición se cumpla ejecutar unas instr
     ```bash
     if [ condición1 ]
     then
-    # instrucciones a ejecutar si se cumple la condición1
+        # instrucciones a ejecutar si se cumple la condición1
     elif [ condición2 ]
     then
-    # instrucciones a ejecutar si se cumple la condición2
+        # instrucciones a ejecutar si se cumple la condición2
     else
-    # instrucciones a ejecutar si no se cumple ninguna condición
+        # instrucciones a ejecutar si no se cumple ninguna condición
     fi
     ```
 
@@ -73,10 +73,10 @@ Existe una instrucción nula que se representa con dos puntos `:`. La podemos us
     ```bash
     if [ condición ]
     then
-    # Si no queremos ejecutar nada si es verdadera, podemos poner la instrucción nula
+        # Si no queremos ejecutar nada si es verdadera, podemos poner la instrucción nula
     :
     else
-    #instrucciones a ejecutar si no se cumple la condición (falsa)
+        #instrucciones a ejecutar si no se cumple la condición (falsa)
     fi
     ```
 

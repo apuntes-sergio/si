@@ -1,8 +1,7 @@
 ---
-title: Linux
+title: Anexos
 description: Scripts en Bash para la administración de linux
 ---
-
 
 # 19. ANEXOS
 

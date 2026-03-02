@@ -1,5 +1,5 @@
 ---
-title: Linux
+title: Bucles
 description: Scripts en Bash para la administración de linux
 ---
 

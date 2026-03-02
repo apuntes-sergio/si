@@ -1,5 +1,5 @@
 ---
-title: Linux
+title: Modularidad
 description: Scripts en Bash para la administración de linux
 ---
 

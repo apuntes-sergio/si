@@ -481,6 +481,7 @@ umask 0022    # o el valor que necesites
 
 !!! example "Ejercicio 2: Cálculo manual"
     Calcula los permisos resultantes para:
+    
     1. umask 0037 en directorios
     2. umask 0037 en archivos
     3. umask 0002 en directorios
